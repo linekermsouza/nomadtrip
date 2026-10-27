@@ -8,7 +8,8 @@ class LodgingBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasDifferentWakeup = day.wakeupCity.isNotEmpty &&
+    final hasDifferentWakeup =
+        day.wakeupCity.isNotEmpty &&
         day.wakeupCity.toLowerCase() != day.lodgingCity.toLowerCase();
 
     return Container(
@@ -24,7 +25,11 @@ class LodgingBadge extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(Icons.hotel_rounded, size: 18, color: Color(0xFF15803D)),
+              const Icon(
+                Icons.hotel_rounded,
+                size: 18,
+                color: Color(0xFF15803D),
+              ),
               const SizedBox(width: 8),
               Expanded(
                 child: Text(
@@ -38,7 +43,10 @@ class LodgingBadge extends StatelessWidget {
               ),
               if (hasDifferentWakeup)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 2,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
@@ -46,7 +54,10 @@ class LodgingBadge extends StatelessWidget {
                   ),
                   child: Text(
                     'Waking up: ${day.wakeupCity}',
-                    style: const TextStyle(fontSize: 11, color: Color(0xFF166534)),
+                    style: const TextStyle(
+                      fontSize: 11,
+                      color: Color(0xFF166534),
+                    ),
                   ),
                 ),
             ],

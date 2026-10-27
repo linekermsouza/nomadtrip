@@ -7,7 +7,8 @@ class ItineraryPlace {
   final String name;
   final String time;
   final String rawDescription;
-  final String category; // 'theme_park', 'shopping', 'food', 'transit', 'attraction'
+  final String
+  category; // 'theme_park', 'shopping', 'food', 'transit', 'attraction'
   final String city;
   final double latitude;
   final double longitude;
@@ -18,6 +19,7 @@ class ItineraryPlace {
   final bool requiresReservation;
   final String notes;
   final List<String> links;
+  final bool isAlternative;
 
   const ItineraryPlace({
     this.id,
@@ -36,6 +38,7 @@ class ItineraryPlace {
     this.requiresReservation = false,
     this.notes = '',
     this.links = const [],
+    this.isAlternative = false,
   });
 
   Map<String, dynamic> toMap() {
@@ -56,6 +59,7 @@ class ItineraryPlace {
       'requires_reservation': requiresReservation ? 1 : 0,
       'notes': notes,
       'links': jsonEncode(links),
+      'is_alternative': isAlternative ? 1 : 0,
     };
   }
 
@@ -71,8 +75,8 @@ class ItineraryPlace {
     }
 
     return ItineraryPlace(
-      id: map['id'] as int?,
-      dayNumber: map['day_number'] as int,
+      id: (map['id'] as num?)?.toInt(),
+      dayNumber: (map['day_number'] as num?)?.toInt() ?? 0,
       name: map['name'] as String,
       time: map['time'] as String,
       rawDescription: (map['raw_description'] as String?) ?? '',
@@ -81,12 +85,15 @@ class ItineraryPlace {
       latitude: (map['latitude'] as num?)?.toDouble() ?? 0.0,
       longitude: (map['longitude'] as num?)?.toDouble() ?? 0.0,
       parking: (map['parking'] as String?) ?? 'Unknown',
-      parkingCost: (map['parking_cost'] as int?) ?? 0,
-      isVisited: (map['is_visited'] as int?) == 1,
-      visitedAt: map['visited_at'] != null ? DateTime.tryParse(map['visited_at'] as String) : null,
-      requiresReservation: (map['requires_reservation'] as int?) == 1,
+      parkingCost: (map['parking_cost'] as num?)?.toInt() ?? 0,
+      isVisited: (map['is_visited'] as num?) == 1,
+      visitedAt: map['visited_at'] != null
+          ? DateTime.tryParse(map['visited_at'] as String)
+          : null,
+      requiresReservation: (map['requires_reservation'] as num?) == 1,
       notes: (map['notes'] as String?) ?? '',
       links: parsedLinks,
+      isAlternative: (map['is_alternative'] as num?) == 1,
     );
   }
 
@@ -107,6 +114,7 @@ class ItineraryPlace {
     bool? requiresReservation,
     String? notes,
     List<String>? links,
+    bool? isAlternative,
   }) {
     return ItineraryPlace(
       id: id ?? this.id,
@@ -125,6 +133,7 @@ class ItineraryPlace {
       requiresReservation: requiresReservation ?? this.requiresReservation,
       notes: notes ?? this.notes,
       links: links ?? this.links,
+      isAlternative: isAlternative ?? this.isAlternative,
     );
   }
 }

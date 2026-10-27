@@ -24,19 +24,34 @@ class AppDatabase {
     if (kIsWeb) {
       databaseFactory = databaseFactoryFfiWeb;
     } else if (defaultTargetPlatform == TargetPlatform.windows ||
-               defaultTargetPlatform == TargetPlatform.linux ||
-               defaultTargetPlatform == TargetPlatform.macOS) {
+        defaultTargetPlatform == TargetPlatform.linux ||
+        defaultTargetPlatform == TargetPlatform.macOS) {
       sqfliteFfiInit();
       databaseFactory = databaseFactoryFfi;
     }
 
     final dbPath = await getDatabasesPath();
-    final path = join(dbPath, 'florida_trip.db');
+    final path = join(dbPath, 'nomadtrip.db');
 
     return await openDatabase(
       path,
-      version: 1,
+      version: 2,
       onCreate: _onCreate,
+      onUpgrade: (db, oldVersion, newVersion) async {
+        if (oldVersion < 2) {
+          await db.execute(
+            'ALTER TABLE places ADD COLUMN is_alternative INTEGER DEFAULT 0',
+          );
+          await db.insert('days', {
+            'day_number': 0,
+            'date': '',
+            'weekday': '',
+            'title': 'Stops without a scheduled day',
+            'lodging_city': '',
+            'wakeup_city': '',
+          });
+        }
+      },
     );
   }
 
@@ -72,6 +87,7 @@ class AppDatabase {
         requires_reservation INTEGER DEFAULT 0,
         notes TEXT,
         links TEXT,
+        is_alternative INTEGER DEFAULT 0,
         FOREIGN KEY (day_number) REFERENCES days (day_number) ON DELETE CASCADE
       )
     ''');
@@ -91,17 +107,27 @@ class AppDatabase {
     await db.execute('CREATE INDEX idx_places_day ON places (day_number)');
     await db.execute('CREATE INDEX idx_places_name ON places (name)');
 
-    // Seed database with initial Florida trip data from JSON asset
+    // Seed database with initial nomadtrip data from JSON asset
+    await db.insert('days', {
+      'day_number': 0,
+      'date': '',
+      'weekday': '',
+      'title': 'Stops without a scheduled day',
+      'lodging_city': '',
+      'wakeup_city': '',
+    });
     await _seedDatabase(db);
   }
 
   Future<void> _seedDatabase(Database db) async {
     try {
-      final jsonString = await rootBundle.loadString('assets/data/itinerary_seed.json');
+      final jsonString = await rootBundle.loadString(
+        'assets/data/itinerary_seed.json',
+      );
       final Map<String, dynamic> data = jsonDecode(jsonString);
 
       final List<dynamic> daysJson = data['days'] as List<dynamic>;
-      final List<dynamic> tipsJson = data['tips'] as List<dynamic>;
+      final List<dynamic> tipsJson = data['tips'] as List<dynamic>? ?? [];
 
       final batch = db.batch();
 
@@ -133,6 +159,7 @@ class AppDatabase {
             'requires_reservation': item['requiresReservation'] == true ? 1 : 0,
             'notes': '',
             'links': jsonEncode([]),
+            'is_alternative': item['isAlternative'] == true ? 1 : 0,
           });
         }
       }
@@ -205,7 +232,8 @@ class AppDatabase {
     final cleanQuery = '%${query.trim()}%';
     final maps = await db.query(
       'places',
-      where: 'name LIKE ? OR raw_description LIKE ? OR city LIKE ? OR notes LIKE ?',
+      where:
+          'name LIKE ? OR raw_description LIKE ? OR city LIKE ? OR notes LIKE ?',
       whereArgs: [cleanQuery, cleanQuery, cleanQuery, cleanQuery],
       orderBy: 'day_number ASC',
     );
@@ -215,6 +243,100 @@ class AppDatabase {
   Future<int> insertPlace(ItineraryPlace place) async {
     final db = await database;
     return await db.insert('places', place.toMap());
+  }
+
+  Future<Map<String, dynamic>> exportData() async {
+    final db = await database;
+    return {
+      'formatVersion': 1,
+      'app': 'nomadtrip',
+      'days': await db.query('days', orderBy: 'day_number ASC'),
+      'places': await db.query('places', orderBy: 'day_number ASC, id ASC'),
+      'tips': await db.query('tips', orderBy: 'id ASC'),
+    };
+  }
+
+  Future<void> importData(Map<String, dynamic> data) async {
+    final db = await database;
+    final rawDays = (data['days'] as List<dynamic>? ?? [])
+        .cast<Map<String, dynamic>>();
+    final places = (data['places'] as List<dynamic>? ?? [])
+        .cast<Map<String, dynamic>>();
+    final tips = (data['tips'] as List<dynamic>? ?? [])
+        .cast<Map<String, dynamic>>();
+    final days = <Map<String, dynamic>>[];
+    final normalizedPlaces = <Map<String, dynamic>>[...places];
+    for (final day in rawDays) {
+      days.add(
+        day.containsKey('day_number')
+            ? day
+            : {
+                'day_number': day['dayNumber'] ?? 0,
+                'date': day['date'] ?? '',
+                'weekday': day['weekday'] ?? '',
+                'title': day['title'] ?? '',
+                'lodgingCity': day['lodgingCity'] ?? '',
+                'wakeupCity': day['wakeupCity'] ?? '',
+              },
+      );
+      for (final item in (day['items'] as List<dynamic>? ?? const [])) {
+        final source = Map<String, dynamic>.from(item as Map);
+        normalizedPlaces.add({
+          'day_number': day['dayNumber'] ?? 0,
+          'name': source['placeName'] ?? '',
+          'time': source['time'] ?? '',
+          'raw_description': source['rawDescription'] ?? '',
+          'category': source['category'] ?? 'attraction',
+          'city': source['city'] ?? '',
+          'latitude': source['latitude'] ?? 0.0,
+          'longitude': source['longitude'] ?? 0.0,
+          'parking': source['parking'] ?? 'Unknown',
+          'parking_cost': source['parkingCost'] ?? 0,
+          'is_visited': 0,
+          'requires_reservation': source['requiresReservation'] == true ? 1 : 0,
+          'notes': '',
+          'links': jsonEncode([]),
+          'is_alternative': source['isAlternative'] == true ? 1 : 0,
+        });
+      }
+    }
+    if (!days.any((day) => (day['day_number'] ?? day['dayNumber']) == 0)) {
+      days.insert(0, {
+        'day_number': 0,
+        'date': '',
+        'weekday': '',
+        'title': 'Stops without a scheduled day',
+        'lodging_city': '',
+        'wakeup_city': '',
+      });
+    }
+    if (days.isEmpty && normalizedPlaces.isEmpty && tips.isEmpty) {
+      throw const FormatException('JSON sem dados de viagem');
+    }
+    await db.transaction((txn) async {
+      await txn.delete('places');
+      await txn.delete('days');
+      await txn.delete('tips');
+      for (final day in days) {
+        final copy = Map<String, dynamic>.from(day)..remove('id');
+        await txn.insert('days', {
+          'day_number': copy['day_number'] ?? copy['dayNumber'] ?? 0,
+          'date': copy['date'] ?? '',
+          'weekday': copy['weekday'] ?? '',
+          'title': copy['title'] ?? '',
+          'lodging_city': copy['lodging_city'] ?? copy['lodgingCity'] ?? '',
+          'wakeup_city': copy['wakeup_city'] ?? copy['wakeupCity'] ?? '',
+        });
+      }
+      for (final place in normalizedPlaces) {
+        final copy = Map<String, dynamic>.from(place)..remove('id');
+        await txn.insert('places', copy);
+      }
+      for (final tip in tips) {
+        final copy = Map<String, dynamic>.from(tip)..remove('id');
+        await txn.insert('tips', copy);
+      }
+    });
   }
 
   Future<int> updatePlace(ItineraryPlace place) async {
@@ -242,21 +364,14 @@ class AppDatabase {
 
   Future<int> deletePlace(int placeId) async {
     final db = await database;
-    return await db.delete(
-      'places',
-      where: 'id = ?',
-      whereArgs: [placeId],
-    );
+    return await db.delete('places', where: 'id = ?', whereArgs: [placeId]);
   }
 
   Future<int> movePlace(int placeId, int newDayNumber, String newTime) async {
     final db = await database;
     return await db.update(
       'places',
-      {
-        'day_number': newDayNumber,
-        'time': newTime,
-      },
+      {'day_number': newDayNumber, 'time': newTime},
       where: 'id = ?',
       whereArgs: [placeId],
     );
@@ -286,10 +401,6 @@ class AppDatabase {
 
   Future<int> deleteTip(int tipId) async {
     final db = await database;
-    return await db.delete(
-      'tips',
-      where: 'id = ?',
-      whereArgs: [tipId],
-    );
+    return await db.delete('tips', where: 'id = ?', whereArgs: [tipId]);
   }
 }

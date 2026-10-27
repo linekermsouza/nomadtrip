@@ -15,7 +15,9 @@ class SelectedDayNotifier extends Notifier<int> {
   void selectDay(int day) => state = day;
 }
 
-final selectedDayNumberProvider = NotifierProvider<SelectedDayNotifier, int>(SelectedDayNotifier.new);
+final selectedDayNumberProvider = NotifierProvider<SelectedDayNotifier, int>(
+  SelectedDayNotifier.new,
+);
 
 // Async notifier for all trip days with places
 class ItineraryNotifier extends AsyncNotifier<List<TripDay>> {
@@ -64,9 +66,10 @@ class ItineraryNotifier extends AsyncNotifier<List<TripDay>> {
   }
 }
 
-final itineraryProvider = AsyncNotifierProvider<ItineraryNotifier, List<TripDay>>(() {
-  return ItineraryNotifier();
-});
+final itineraryProvider =
+    AsyncNotifierProvider<ItineraryNotifier, List<TripDay>>(() {
+      return ItineraryNotifier();
+    });
 
 // Helper provider for the currently active day
 final currentDayProvider = Provider<TripDay?>((ref) {
@@ -77,14 +80,16 @@ final currentDayProvider = Provider<TripDay?>((ref) {
     data: (days) {
       return days.firstWhere(
         (d) => d.dayNumber == selectedDayNum,
-        orElse: () => days.isNotEmpty ? days.first : const TripDay(
-          dayNumber: 1,
-          date: '2026-11-24',
-          weekday: 'Tuesday',
-          title: 'Florida Trip',
-          lodgingCity: 'Orlando',
-          wakeupCity: 'Miami',
-        ),
+        orElse: () => days.isNotEmpty
+            ? days.first
+            : const TripDay(
+                dayNumber: 1,
+                date: '2026-11-24',
+                weekday: 'Tuesday',
+                title: 'nomadtrip',
+                lodgingCity: 'Orlando',
+                wakeupCity: 'Miami',
+              ),
       );
     },
     loading: () => null,

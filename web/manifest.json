@@ -1,6 +1,6 @@
 {
-    "name": "florida_trip",
-    "short_name": "florida_trip",
+    "name": "nomadtrip",
+    "short_name": "nomadtrip",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,0 +1,1469 @@
+{
+  "tripName": "nomadtrip",
+  "startDate": "2026-11-24",
+  "endDate": "2026-12-13",
+  "days": [
+    {
+      "dayNumber": 1,
+      "weekday": "Terça",
+      "date": "2026-11-24",
+      "title": "Chegada Miami → Orlando",
+      "lodgingCity": "Orlando",
+      "wakeupCity": "Miami",
+      "items": [
+        {
+          "time": "13h34",
+          "rawDescription": "Chegada ao Aeroporto de Miami.",
+          "placeName": "Chegada ao Aeroporto de Miami.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 25.7959,
+          "longitude": -80.287,
+          "city": "Miami"
+        },
+        {
+          "time": "14h30",
+          "rawDescription": "Retirada do carro alugado (ritmo otimista de imigração e locadora).",
+          "placeName": "Retirada do carro alugado (ritmo otimist",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "16h00–17h30",
+          "rawDescription": "Parada na __Apple Store – Town Center at Boca Raton__. Estacionamento gratuito no shopping. Compras de iPhones e Apple Watch.",
+          "placeName": "Apple Store – Town Center at Boca Raton",
+          "allHighlights": [
+            "Apple Store – Town Center at Boca Raton"
+          ],
+          "parking": "Free",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 26.3664,
+          "longitude": -80.1332,
+          "city": "Boca Raton"
+        },
+        {
+          "time": "17h45–18h30",
+          "rawDescription": "__Costco Boca Raton__ (rápida parada para eletrônicos, roupas UV e snacks).",
+          "placeName": "Costco Boca Raton",
+          "allHighlights": [
+            "Costco Boca Raton"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 26.3769,
+          "longitude": -80.1197,
+          "city": "Boca Raton"
+        },
+        {
+          "time": "18h45–19h30",
+          "rawDescription": "__Walmart Supercenter__ (obrigatório). Compras de mantimentos e itens básicos. Estacionamento gratuito.",
+          "placeName": "Walmart Supercenter",
+          "allHighlights": [
+            "Walmart Supercenter"
+          ],
+          "parking": "Free",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 26.3353,
+          "longitude": -80.1585,
+          "city": "Boca Raton"
+        },
+        {
+          "time": "19h30",
+          "rawDescription": "Saída para Orlando via Turnpike. Pedágios previstos: Florida Turnpike (~US$20).",
+          "placeName": "Saída para Orlando via Turnpike. Pedágio",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "19h30–23h00",
+          "rawDescription": "Continuação da viagem até Orlando (~3h30).",
+          "placeName": "Continuação da viagem até Orlando (~3h30",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "23h00",
+          "rawDescription": "Chegada em Orlando, check-in na casa.",
+          "placeName": "Chegada em Orlando, check-in na casa.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 2,
+      "weekday": "Quarta",
+      "date": "2026-11-25",
+      "title": "Orlando – compras leves e ambientação",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00",
+          "rawDescription": "Café da manhã na casa.",
+          "placeName": "Café da manhã na casa.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "09h00–12h00",
+          "rawDescription": "Passeio leve em __International Drive + ICON Park__. Estacionamento pago (~US$5).",
+          "placeName": "International Drive + ICON Park",
+          "allHighlights": [
+            "International Drive + ICON Park"
+          ],
+          "parking": "Paid",
+          "parkingCost": 5,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.4431,
+          "longitude": -81.47,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço no __Shake Shack__.",
+          "placeName": "Shake Shack",
+          "allHighlights": [
+            "Shake Shack"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.4445,
+          "longitude": -81.4705,
+          "city": "Orlando"
+        },
+        {
+          "time": "14h00–17h30",
+          "rawDescription": "Compras em __Orlando Outlet Marketplace + Five Below__ (brinquedos, snacks e utilidades). Estacionamento gratuito.",
+          "placeName": "Orlando Outlet Marketplace + Five Below",
+          "allHighlights": [
+            "Orlando Outlet Marketplace + Five Below"
+          ],
+          "parking": "Free",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 28.4746,
+          "longitude": -81.4552,
+          "city": "Orlando"
+        },
+        {
+          "time": "18h00–20h00",
+          "rawDescription": "Jantar em restaurante estilo americano na I-Drive (__Miller’s Ale House__ ou __BJ’s Restaurant & Brewhouse__).",
+          "placeName": "Miller’s Ale House",
+          "allHighlights": [
+            "Miller’s Ale House",
+            "BJ’s Restaurant & Brewhouse"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.4357,
+          "longitude": -81.4719,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 3,
+      "weekday": "Quinta",
+      "date": "2026-11-26",
+      "title": "Thanksgiving + SeaWorld",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00",
+          "rawDescription": "Café da manhã.",
+          "placeName": "Café da manhã.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "09h00–17h00",
+          "rawDescription": "__SeaWorld Orlando__. Estacionamento pago (~US$30).",
+          "placeName": "SeaWorld Orlando",
+          "allHighlights": [
+            "SeaWorld Orlando"
+          ],
+          "parking": "Paid",
+          "parkingCost": 30,
+          "category": "theme_park",
+          "requiresReservation": false,
+          "latitude": 28.4115,
+          "longitude": -81.4608,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço dentro do parque.",
+          "placeName": "Almoço dentro do parque.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "17h30–20h00",
+          "rawDescription": "Experiência de __Thanksgiving Dinner__ (jantar temático no parque ou em restaurante com reserva antecipada para a ceia de Ação de Graças).",
+          "placeName": "Thanksgiving Dinner",
+          "allHighlights": [
+            "Thanksgiving Dinner"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": true,
+          "latitude": 28.4115,
+          "longitude": -81.4608,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 4,
+      "weekday": "Sexta",
+      "date": "2026-11-27",
+      "title": "Black Friday – compras intensas + Cracker Barrel",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00–18h00",
+          "rawDescription": "Dia dedicado a __outlets e shoppings__ (Orlando International Premium Outlets, Florida Mall). Estacionamento gratuito.",
+          "placeName": "outlets e shoppings",
+          "allHighlights": [
+            "outlets e shoppings"
+          ],
+          "parking": "Free",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 28.4745,
+          "longitude": -81.452,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço rápido no __Chick-fil-A__.",
+          "placeName": "Chick-fil-A",
+          "allHighlights": [
+            "Chick-fil-A"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.4497,
+          "longitude": -81.4712,
+          "city": "Orlando"
+        },
+        {
+          "time": "18h30–20h30",
+          "rawDescription": "Jantar no __Cracker Barrel Old Country Store__ (comida típica do sul americano e loja de presentes).",
+          "placeName": "Cracker Barrel Old Country Store",
+          "allHighlights": [
+            "Cracker Barrel Old Country Store"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.434,
+          "longitude": -81.488,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 5,
+      "weekday": "Sábado",
+      "date": "2026-11-28",
+      "title": "Busch Gardens Tampa + Celebration",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "07h00",
+          "rawDescription": "Saída para Tampa (~1h30). Café da manhã leve na saída ou parada em drive-thru na estrada (Dunkin'/Starbucks).",
+          "placeName": "Saída para Tampa (~1h30). Café da manhã ",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "09h00–17h00",
+          "rawDescription": "__Busch Gardens Tampa Bay__. Estacionamento pago (~US$30).",
+          "placeName": "Busch Gardens Tampa Bay",
+          "allHighlights": [
+            "Busch Gardens Tampa Bay"
+          ],
+          "parking": "Paid",
+          "parkingCost": 30,
+          "category": "theme_park",
+          "requiresReservation": false,
+          "latitude": 28.0372,
+          "longitude": -82.4194,
+          "city": "Tampa"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço dentro do parque.",
+          "placeName": "Almoço dentro do parque.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "18h30–21h00",
+          "rawDescription": "Passeio noturno em __Celebration__ (neve/luzes natalinas - *Now Snowing*).",
+          "placeName": "Celebration",
+          "allHighlights": [
+            "Celebration"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.3182,
+          "longitude": -81.5413,
+          "city": "Celebration"
+        }
+      ]
+    },
+    {
+      "dayNumber": 6,
+      "weekday": "Domingo",
+      "date": "2026-11-29",
+      "title": "Lake Eola + Downtown Orlando",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "09h00–12h00",
+          "rawDescription": "__Lake Eola Sunday Market__ (feirinha obrigatória). Estacionamento pago (~US$10).",
+          "placeName": "Lake Eola Sunday Market",
+          "allHighlights": [
+            "Lake Eola Sunday Market"
+          ],
+          "parking": "Paid",
+          "parkingCost": 10,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.5434,
+          "longitude": -81.3732,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço no __Wendy’s__.",
+          "placeName": "Wendy’s",
+          "allHighlights": [
+            "Wendy’s"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5401,
+          "longitude": -81.375,
+          "city": "Orlando"
+        },
+        {
+          "time": "14h00–17h00",
+          "rawDescription": "Passeio em __Downtown Orlando__.",
+          "placeName": "Downtown Orlando",
+          "allHighlights": [
+            "Downtown Orlando"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "18h00–20h00",
+          "rawDescription": "Jantar no __Little Caesars__.",
+          "placeName": "Little Caesars",
+          "allHighlights": [
+            "Little Caesars"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.545,
+          "longitude": -81.38,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 7,
+      "weekday": "Segunda",
+      "date": "2026-11-30",
+      "title": "Magic Kingdom",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00–22h00",
+          "rawDescription": "__Magic Kingdom__ (sem After Hours, confirmado). Estacionamento pago (~US$30).",
+          "placeName": "Magic Kingdom",
+          "allHighlights": [
+            "Magic Kingdom"
+          ],
+          "parking": "Paid",
+          "parkingCost": 30,
+          "category": "theme_park",
+          "requiresReservation": false,
+          "latitude": 28.4177,
+          "longitude": -81.5812,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço dentro do parque.",
+          "placeName": "Almoço dentro do parque.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 8,
+      "weekday": "Terça",
+      "date": "2026-12-01",
+      "title": "Disney’s Very Merry Christmas Party — até 00h00!",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00–15h00",
+          "rawDescription": "Dia leve – compras rápidas em __Dollar Tree, GameStop, Wawa__ e descanso.",
+          "placeName": "Dollar Tree, GameStop, Wawa",
+          "allHighlights": [
+            "Dollar Tree, GameStop, Wawa"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 28.45,
+          "longitude": -81.46,
+          "city": "Orlando"
+        },
+        {
+          "time": "16h00–00h00",
+          "rawDescription": "__Mickey’s Very Merry Christmas Party__ (Entrada no Magic Kingdom a partir das 16h00; a festa oficial vai até 00h00 — **aproveitando até a meia-noite!**). Estacionamento pago (~US$30).",
+          "placeName": "Mickey’s Very Merry Christmas Party",
+          "allHighlights": [
+            "Mickey’s Very Merry Christmas Party"
+          ],
+          "parking": "Paid",
+          "parkingCost": 30,
+          "category": "theme_park",
+          "requiresReservation": false,
+          "latitude": 28.4177,
+          "longitude": -81.5812,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 9,
+      "weekday": "Quarta",
+      "date": "2026-12-02",
+      "title": "Dia leve + Disney Springs",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "09h00–12h00",
+          "rawDescription": "Passeio em __Winter Garden__ (centro histórico natalino).",
+          "placeName": "Winter Garden",
+          "allHighlights": [
+            "Winter Garden"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.5656,
+          "longitude": -81.5862,
+          "city": "Winter Garden"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço no __Five Guys__.",
+          "placeName": "Five Guys",
+          "allHighlights": [
+            "Five Guys"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.566,
+          "longitude": -81.587,
+          "city": "Winter Garden"
+        },
+        {
+          "time": "16h00–19h00",
+          "rawDescription": "__Disney Springs__ (pôr do sol). Estacionamento gratuito.",
+          "placeName": "Disney Springs",
+          "allHighlights": [
+            "Disney Springs"
+          ],
+          "parking": "Free",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.3705,
+          "longitude": -81.5204,
+          "city": "Lake Buena Vista"
+        },
+        {
+          "time": "19h30–21h00",
+          "rawDescription": "Jantar no __Shake Shack__.",
+          "placeName": "Shake Shack",
+          "allHighlights": [
+            "Shake Shack"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.4445,
+          "longitude": -81.4705,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 10,
+      "weekday": "Quinta",
+      "date": "2026-12-03",
+      "title": "Hollywood Studios",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00–20h00",
+          "rawDescription": "__Hollywood Studios__. Estacionamento pago (~US$30).",
+          "placeName": "Hollywood Studios",
+          "allHighlights": [
+            "Hollywood Studios"
+          ],
+          "parking": "Paid",
+          "parkingCost": 30,
+          "category": "theme_park",
+          "requiresReservation": false,
+          "latitude": 28.3575,
+          "longitude": -81.5583,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço dentro do parque.",
+          "placeName": "Almoço dentro do parque.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 11,
+      "weekday": "Sexta",
+      "date": "2026-12-04",
+      "title": "Super Dia Disney Resorts: Disney Springs -> Art of Animation -> Beaches & Cream 16h -> BoardWalk -> Chip 'n Dale Campfire",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "14h00",
+          "rawDescription": "Chegada ao __Disney Springs__ e estacionamento gratuito da Disney.",
+          "placeName": "Disney Springs",
+          "allHighlights": [
+            "Disney Springs"
+          ],
+          "parking": "Free",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.3705,
+          "longitude": -81.5204,
+          "city": "Lake Buena Vista"
+        },
+        {
+          "time": "14h15–15h30",
+          "rawDescription": "Embarque no ônibus de Disney Springs para o __Disney’s Art of Animation Resort__. Passeio pelas áreas temáticas (Carros, Rei Leão, Pequena Sereia) e fotos!",
+          "placeName": "Disney’s Art of Animation Resort",
+          "allHighlights": [
+            "Disney’s Art of Animation Resort"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 28.3705,
+          "longitude": -81.5204,
+          "city": "Lake Buena Vista"
+        },
+        {
+          "time": "15h30–16h00",
+          "rawDescription": "Viagem de __Disney Skyliner__ do Art of Animation até a estação do Epcot / International Gateway + caminhada rápida até o Beach Club Resort.",
+          "placeName": "Disney Skyliner",
+          "allHighlights": [
+            "Disney Skyliner"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "16h00–17h15",
+          "rawDescription": "Reserva confirmada no __Beaches & Cream Soda Shop__ (para saborear o famoso **Kitchen Sink Sundae**!).",
+          "placeName": "Beaches & Cream Soda Shop",
+          "allHighlights": [
+            "Beaches & Cream Soda Shop"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": true,
+          "latitude": 28.3712,
+          "longitude": -81.5559,
+          "city": "Orlando"
+        },
+        {
+          "time": "17h15–18h15",
+          "rawDescription": "Passeio pelo calçadão do __Disney’s BoardWalk Entertainment District__.",
+          "placeName": "Disney’s BoardWalk Entertainment District",
+          "allHighlights": [
+            "Disney’s BoardWalk Entertainment District"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.3667,
+          "longitude": -81.5561,
+          "city": "Orlando"
+        },
+        {
+          "time": "18h30–20h30",
+          "rawDescription": "Deslocamento de transporte Disney até o __Disney’s Fort Wilderness Resort & Campground__ para a experiência do __Chip ’n Dale Campfire__ (fogueira com Tico e Teco, marshmallows e cinema ao ar livre).",
+          "placeName": "Disney’s Fort Wilderness Resort & Campground",
+          "allHighlights": [
+            "Disney’s Fort Wilderness Resort & Campground",
+            "Chip ’n Dale Campfire"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.3995,
+          "longitude": -81.5644,
+          "city": "Orlando"
+        },
+        {
+          "time": "20h45–21h30",
+          "rawDescription": "Ônibus de volta ao __Disney Springs__, recuperação do carro e retorno para casa.",
+          "placeName": "Disney Springs",
+          "allHighlights": [
+            "Disney Springs"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 28.3705,
+          "longitude": -81.5204,
+          "city": "Lake Buena Vista"
+        }
+      ]
+    },
+    {
+      "dayNumber": 12,
+      "weekday": "Sábado",
+      "date": "2026-12-05",
+      "title": "Saint Augustine bate-volta + Parada no Buc-ee's!",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "07h00",
+          "rawDescription": "Saída de Orlando em direção a Saint Augustine (~2h00 de viagem).",
+          "placeName": "Saída de Orlando em direção a Saint Augu",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 29.8978,
+          "longitude": -81.3119,
+          "city": "St. Augustine"
+        },
+        {
+          "time": "09h00–10h00",
+          "rawDescription": "__Parada obrigatória no Buc-ee’s de St. Augustine__ (World Commerce Pkwy, I-95 Saída 323) — abastecer, provar o brisket, snacks e comprar souvenirs!",
+          "placeName": "Parada obrigatória no Buc-ee’s de St. Augustine",
+          "allHighlights": [
+            "Parada obrigatória no Buc-ee’s de St. Augustine"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 29.9863,
+          "longitude": -81.4655,
+          "city": "St. Augustine"
+        },
+        {
+          "time": "10h30–18h00",
+          "rawDescription": "Passeio em __Saint Augustine__ (Colonial Quarter, St. George Street, Castillo de San Marcos e evento *Nights of Lights*). Estacionamento pago (~US$15).",
+          "placeName": "Saint Augustine",
+          "allHighlights": [
+            "Saint Augustine"
+          ],
+          "parking": "Paid",
+          "parkingCost": 15,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 29.8978,
+          "longitude": -81.3119,
+          "city": "St. Augustine"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço em restaurante local histórico.",
+          "placeName": "Almoço em restaurante local histórico.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "18h30–20h30",
+          "rawDescription": "Retorno para Orlando (~2h00).",
+          "placeName": "Retorno para Orlando (~2h00).",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 13,
+      "weekday": "Domingo",
+      "date": "2026-12-06",
+      "title": "Winter Garden + descanso",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "09h00–12h00",
+          "rawDescription": "Passeio em __Winter Garden__ (centro histórico natalino).",
+          "placeName": "Winter Garden",
+          "allHighlights": [
+            "Winter Garden"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 28.5656,
+          "longitude": -81.5862,
+          "city": "Winter Garden"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço no __Chick-fil-A__.",
+          "placeName": "Chick-fil-A",
+          "allHighlights": [
+            "Chick-fil-A"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.4497,
+          "longitude": -81.4712,
+          "city": "Orlando"
+        },
+        {
+          "time": "14h00–17h00",
+          "rawDescription": "Compras leves em __Dollar Tree, Target, 7-Eleven__.",
+          "placeName": "Dollar Tree, Target, 7-Eleven",
+          "allHighlights": [
+            "Dollar Tree, Target, 7-Eleven"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 28.45,
+          "longitude": -81.46,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 14,
+      "weekday": "Segunda",
+      "date": "2026-12-07",
+      "title": "Universal Studios + Islands of Adventure",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00–20h00",
+          "rawDescription": "__Universal Studios + Islands of Adventure__. Estacionamento pago (~US$30).",
+          "placeName": "Universal Studios + Islands of Adventure",
+          "allHighlights": [
+            "Universal Studios + Islands of Adventure"
+          ],
+          "parking": "Paid",
+          "parkingCost": 30,
+          "category": "theme_park",
+          "requiresReservation": false,
+          "latitude": 28.4722,
+          "longitude": -81.4679,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço dentro do parque.",
+          "placeName": "Almoço dentro do parque.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 15,
+      "weekday": "Terça",
+      "date": "2026-12-08",
+      "title": "Dia leve e flexível / Descanso pós-maratona",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "09h00–12h00",
+          "rawDescription": "Manhã tranquila / compras leves ou descanso.",
+          "placeName": "Manhã tranquila / compras leves ou desca",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço no __Shake Shack__.",
+          "placeName": "Shake Shack",
+          "allHighlights": [
+            "Shake Shack"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.4445,
+          "longitude": -81.4705,
+          "city": "Orlando"
+        },
+        {
+          "time": "14h00–18h00",
+          "rawDescription": "Tarde livre para passeios opcionais (ex: Kissimmee Old Town, Vineland Premium Outlets). *(Nota: O Chip 'n Dale Campfire foi realizado com sucesso no Dia 11)*.",
+          "placeName": "Tarde livre para passeios opcionais (ex:",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 16,
+      "weekday": "Quarta",
+      "date": "2026-12-09",
+      "title": "Epic Universe",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00–20h00",
+          "rawDescription": "__Epic Universe__. Estacionamento pago (~US$30).",
+          "placeName": "Epic Universe",
+          "allHighlights": [
+            "Epic Universe"
+          ],
+          "parking": "Paid",
+          "parkingCost": 30,
+          "category": "theme_park",
+          "requiresReservation": false,
+          "latitude": 28.431,
+          "longitude": -81.442,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço dentro do parque.",
+          "placeName": "Almoço dentro do parque.",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 17,
+      "weekday": "Quinta",
+      "date": "2026-12-10",
+      "title": "CityWalk + Water Taxi até o Portofino Bay Hotel",
+      "lodgingCity": "Orlando.",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "09h00–12h00",
+          "rawDescription": "Compras leves em __Outlets__.",
+          "placeName": "Outlets",
+          "allHighlights": [
+            "Outlets"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "shopping",
+          "requiresReservation": false,
+          "latitude": 28.5383,
+          "longitude": -81.3792,
+          "city": "Orlando"
+        },
+        {
+          "time": "12h30",
+          "rawDescription": "Almoço no __Five Guys__.",
+          "placeName": "Five Guys",
+          "allHighlights": [
+            "Five Guys"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.566,
+          "longitude": -81.587,
+          "city": "Winter Garden"
+        },
+        {
+          "time": "17h30–18h30",
+          "rawDescription": "Passeio de __Water Taxi (táxi aquático gratuito da Universal)** partindo do CityWalk até o **Loews Portofino Bay Hotel** para ver o resort e o pôr do sol.",
+          "placeName": "Passeio de __Water Taxi (táxi aquático g",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "theme_park",
+          "requiresReservation": false,
+          "latitude": 28.4736,
+          "longitude": -81.4664,
+          "city": "Orlando"
+        },
+        {
+          "time": "18h30–22h00",
+          "rawDescription": "Retorno ao **Universal CityWalk** (jantar no Bubba Gump, Voodoo Doughnut, Toothsome Chocolate Emporium). Estacionamento gratuito após 18h.",
+          "placeName": "Retorno ao **Universal CityWalk** (janta",
+          "allHighlights": [],
+          "parking": "Free",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.4736,
+          "longitude": -81.4664,
+          "city": "Orlando"
+        }
+      ]
+    },
+    {
+      "dayNumber": 18,
+      "weekday": "Sexta",
+      "date": "2026-12-11",
+      "title": "Orlando → Miami",
+      "lodgingCity": "Miami (casa).",
+      "wakeupCity": "Orlando",
+      "items": [
+        {
+          "time": "08h00–14h00",
+          "rawDescription": "Viagem Orlando → Miami (~4h).",
+          "placeName": "Viagem Orlando → Miami (~4h).",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 25.7617,
+          "longitude": -80.1918,
+          "city": "Miami"
+        },
+        {
+          "time": "15h00–18h00",
+          "rawDescription": "Passeio em __Wynwood Walls__ (arte urbana). Estacionamento pago (~US$8).",
+          "placeName": "Wynwood Walls",
+          "allHighlights": [
+            "Wynwood Walls"
+          ],
+          "parking": "Paid",
+          "parkingCost": 8,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 25.8011,
+          "longitude": -80.1994,
+          "city": "Miami"
+        },
+        {
+          "time": "18h30–20h30",
+          "rawDescription": "Jantar em __Little Havana__ (restaurante cubano).",
+          "placeName": "Little Havana",
+          "allHighlights": [
+            "Little Havana"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 25.7654,
+          "longitude": -80.2089,
+          "city": "Miami"
+        },
+        {
+          "time": "21h00–23h00",
+          "rawDescription": "Passeio noturno em __South Beach + Ocean Drive__ (obrigatório). Estacionamento pago (~US$15).",
+          "placeName": "South Beach + Ocean Drive",
+          "allHighlights": [
+            "South Beach + Ocean Drive"
+          ],
+          "parking": "Paid",
+          "parkingCost": 15,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 25.7826,
+          "longitude": -80.1302,
+          "city": "Miami Beach"
+        }
+      ]
+    },
+    {
+      "dayNumber": 19,
+      "weekday": "Sábado",
+      "date": "2026-12-12",
+      "title": "Miami → Key West — Chegada pontual às 17h00 para o Pôr do Sol",
+      "lodgingCity": "Key West (casa).",
+      "wakeupCity": "Miami",
+      "items": [
+        {
+          "time": "06h30",
+          "rawDescription": "Saída pontual de Miami rumo a Key West via Overseas Highway (US-1).",
+          "placeName": "Saída pontual de Miami rumo a Key West v",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 24.5551,
+          "longitude": -81.78,
+          "city": "Key West"
+        },
+        {
+          "time": "07h45–08h30",
+          "rawDescription": "Parada em Florida City no __Robert is Here__ (fazendinha com animais, milkshakes tropicais e lanche mexicano).",
+          "placeName": "Robert is Here",
+          "allHighlights": [
+            "Robert is Here"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 25.4485,
+          "longitude": -80.5056,
+          "city": "Florida City"
+        },
+        {
+          "time": "09h00–09h30",
+          "rawDescription": "Parada em __Key Largo – Caribbean Club__ (fotos e vista para a baía).",
+          "placeName": "Key Largo – Caribbean Club",
+          "allHighlights": [
+            "Key Largo – Caribbean Club"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 25.1764,
+          "longitude": -80.399,
+          "city": "Key Largo"
+        },
+        {
+          "time": "10h00–10h30",
+          "rawDescription": "Parada em __Tavernier – Blond Giraffe Key Lime Pie Factory__ (degustação da torta de limão).",
+          "placeName": "Tavernier – Blond Giraffe Key Lime Pie Factory",
+          "allHighlights": [
+            "Tavernier – Blond Giraffe Key Lime Pie Factory"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 25.0084,
+          "longitude": -80.5284,
+          "city": "Tavernier"
+        },
+        {
+          "time": "11h00–12h00",
+          "rawDescription": "Parada em __Islamorada__ (Robbie’s Marina / alimentando os Tarpons).",
+          "placeName": "Islamorada",
+          "allHighlights": [
+            "Islamorada"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 24.8785,
+          "longitude": -80.6865,
+          "city": "Islamorada"
+        },
+        {
+          "time": "12h30–13h15",
+          "rawDescription": "Almoço rápido na estrada (__Mrs. Mac’s Kitchen__ ou Dunkin').",
+          "placeName": "Mrs. Mac’s Kitchen",
+          "allHighlights": [
+            "Mrs. Mac’s Kitchen"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 25.0934,
+          "longitude": -80.4431,
+          "city": "Key Largo"
+        },
+        {
+          "time": "14h00–14h30",
+          "rawDescription": "Parada em __Marathon – Seven Mile Bridge__ (fotos na ponte histórica).",
+          "placeName": "Marathon – Seven Mile Bridge",
+          "allHighlights": [
+            "Marathon – Seven Mile Bridge"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 24.7005,
+          "longitude": -81.1558,
+          "city": "Marathon"
+        },
+        {
+          "time": "15h00–15h40",
+          "rawDescription": "Parada em __Big Pine Key – National Key Deer Refuge & No Name Pub__.",
+          "placeName": "Big Pine Key – National Key Deer Refuge & No Name Pub",
+          "allHighlights": [
+            "Big Pine Key – National Key Deer Refuge & No Name Pub"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 24.6978,
+          "longitude": -81.3283,
+          "city": "Big Pine Key"
+        },
+        {
+          "time": "17h00",
+          "rawDescription": "**Chegada pontual a Key West!**",
+          "placeName": "**Chegada pontual a Key West!**",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 24.5551,
+          "longitude": -81.78,
+          "city": "Key West"
+        },
+        {
+          "time": "17h15–18h30",
+          "rawDescription": "__Mallory Square – Pôr do sol obrigatório__ (pôr do sol pontual às ~17h35).",
+          "placeName": "Mallory Square – Pôr do sol obrigatório",
+          "allHighlights": [
+            "Mallory Square – Pôr do sol obrigatório"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 24.5597,
+          "longitude": -81.8075,
+          "city": "Key West"
+        },
+        {
+          "time": "19h00–21h00",
+          "rawDescription": "Passeio em __Duval Street__ + jantar.",
+          "placeName": "Duval Street",
+          "allHighlights": [
+            "Duval Street"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 24.5545,
+          "longitude": -81.801,
+          "city": "Key West"
+        },
+        {
+          "time": "21h30",
+          "rawDescription": "Sobremesa noturna na __Kermit’s Key Lime Pie Shop__ (Elizabeth Street).",
+          "placeName": "Kermit’s Key Lime Pie Shop",
+          "allHighlights": [
+            "Kermit’s Key Lime Pie Shop"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 24.5606,
+          "longitude": -81.8021,
+          "city": "Key West"
+        }
+      ]
+    },
+    {
+      "dayNumber": 20,
+      "weekday": "Domingo",
+      "date": "2026-12-13",
+      "title": "Key West → Miami Aeroporto — Chegada 3h antes do voo",
+      "lodgingCity": "Orlando",
+      "wakeupCity": "Key West",
+      "items": [
+        {
+          "time": "07h00–08h30",
+          "rawDescription": "Passeio leve e fotos sem fila no marco do __Southernmost Point Buoy__.",
+          "placeName": "Southernmost Point Buoy",
+          "allHighlights": [
+            "Southernmost Point Buoy"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 24.5465,
+          "longitude": -81.7975,
+          "city": "Key West"
+        },
+        {
+          "time": "08h30–10h00",
+          "rawDescription": "Visita ao __Fort Zachary Taylor State Park__ (praia / local histórico).",
+          "placeName": "Fort Zachary Taylor State Park",
+          "allHighlights": [
+            "Fort Zachary Taylor State Park"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "attraction",
+          "requiresReservation": false,
+          "latitude": 24.5475,
+          "longitude": -81.809,
+          "city": "Key West"
+        },
+        {
+          "time": "10h00",
+          "rawDescription": "Saída de Key West com destino direto ao __Aeroporto de Miami (MIA)__ (~4h00 a 4h30 de viagem).",
+          "placeName": "Aeroporto de Miami (MIA)",
+          "allHighlights": [
+            "Aeroporto de Miami (MIA)"
+          ],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "transit",
+          "requiresReservation": false,
+          "latitude": 25.7959,
+          "longitude": -80.287,
+          "city": "Miami"
+        },
+        {
+          "time": "11h30",
+          "rawDescription": "Parada rápida para almoço/combustível na estrada (Wendy’s ou Chick-fil-A).",
+          "placeName": "Parada rápida para almoço/combustível na",
+          "allHighlights": [],
+          "parking": "Unknown",
+          "parkingCost": 0,
+          "category": "food",
+          "requiresReservation": false,
+          "latitude": 28.4497,
+          "longitude": -81.4712,
+          "city": "Orlando"
+        }
+      ]
+    }
+  ],
+  "tips": [
+    {
+      "category": "toll",
+      "title": "Florida Turnpike & SunPass",
+      "content": "Tolls between Miami and Orlando are ~$20 each way. Use SunPass or get a Visitor Toll Pass at Orlando International Airport (MCO) to save on rental car toll fees.",
+      "isCompleted": false
+    },
+    {
+      "category": "ticket",
+      "title": "Thanksgiving Dinner Reservation (Nov 26)",
+      "content": "Make reservations early for Thanksgiving Dinner inside SeaWorld or around International Drive.",
+      "isCompleted": false
+    },
+    {
+      "category": "ticket",
+      "title": "Mickey's Very Merry Christmas Party (Dec 01)",
+      "content": "Magic Kingdom entrance is allowed from 16:00, party runs until midnight! Special fireworks and shows.",
+      "isCompleted": false
+    },
+    {
+      "category": "dining",
+      "title": "Beaches & Cream Soda Shop (Dec 04 at 16:00)",
+      "content": "Confirmed reservation for the famous Kitchen Sink Sundae at Disney's Beach Club Resort.",
+      "isCompleted": false
+    },
+    {
+      "category": "shopping",
+      "title": "Black Friday (Nov 27)",
+      "content": "Arrive early at Orlando International Premium Outlets and The Florida Mall. Parking is free but gets packed fast.",
+      "isCompleted": false
+    },
+    {
+      "category": "pitstop",
+      "title": "Buc-ee's St. Augustine (Dec 05)",
+      "content": "Stop at World Commerce Pkwy, I-95 Exit 323. Must try: fresh warm brisket sandwiches, beaver nuggets, and clean restrooms!",
+      "isCompleted": false
+    },
+    {
+      "category": "timing",
+      "title": "Overseas Highway to Key West (Dec 12)",
+      "content": "Leave Miami promptly at 06:30 to arrive in Key West by 17:00 for the Mallory Square sunset at ~17:35.",
+      "isCompleted": false
+    },
+    {
+      "category": "airport",
+      "title": "Return to Miami Airport (Dec 13)",
+      "content": "Arrive at MIA at least 3 hours before international flight departure to return rental car, drop bags and clear TSA.",
+      "isCompleted": false
+    }
+  ]
+}

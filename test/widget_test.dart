@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-import 'package:florida_trip/main.dart';
+import 'package:nomadtrip/main.dart';
 
 void main() {
   setUpAll(() {
@@ -10,13 +10,9 @@ void main() {
   });
 
   testWidgets('App smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(
-      const ProviderScope(
-        child: FloridaTripApp(),
-      ),
-    );
+    await tester.pumpWidget(const ProviderScope(child: NomadtripApp()));
 
     // Verify app root initializes
-    expect(find.byType(FloridaTripApp), findsOneWidget);
+    expect(find.byType(NomadtripApp), findsOneWidget);
   });
 }

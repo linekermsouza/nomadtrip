@@ -12,7 +12,9 @@ class NavigationLauncher {
 
   /// Launch route navigation directly via Google Maps
   static Future<bool> launchGoogleMaps(double lat, double lng) async {
-    final uri = Uri.parse('https://www.google.com/maps/dir/?api=1&destination=$lat,$lng');
+    final uri = Uri.parse(
+      'https://www.google.com/maps/dir/?api=1&destination=$lat,$lng',
+    );
     return await launchUrl(uri, mode: LaunchMode.externalApplication);
   }
 
@@ -76,8 +78,13 @@ class NavigationLauncher {
                     backgroundColor: Color(0xFFE8F0FE),
                     child: Icon(Icons.map_rounded, color: Color(0xFF1A73E8)),
                   ),
-                  title: const Text('Google Maps', style: TextStyle(fontWeight: FontWeight.w600)),
-                  subtitle: const Text('Best for turn-by-turn and Florida traffic'),
+                  title: const Text(
+                    'Google Maps',
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    'Best for turn-by-turn and Florida traffic',
+                  ),
                   onTap: () {
                     Navigator.pop(ctx);
                     launchGoogleMaps(latitude, longitude);
@@ -86,10 +93,18 @@ class NavigationLauncher {
                 ListTile(
                   leading: const CircleAvatar(
                     backgroundColor: Color(0xFFE0F7FA),
-                    child: Icon(Icons.directions_car_rounded, color: Color(0xFF00ACC1)),
+                    child: Icon(
+                      Icons.directions_car_rounded,
+                      color: Color(0xFF00ACC1),
+                    ),
                   ),
-                  title: const Text('Waze', style: TextStyle(fontWeight: FontWeight.w600)),
-                  subtitle: const Text('Real-time alerts, police & speed traps'),
+                  title: const Text(
+                    'Waze',
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    'Real-time alerts, police & speed traps',
+                  ),
                   onTap: () {
                     Navigator.pop(ctx);
                     launchWaze(latitude, longitude);
@@ -101,7 +116,10 @@ class NavigationLauncher {
                       backgroundColor: Color(0xFFF5F5F7),
                       child: Icon(Icons.apple_rounded, color: Colors.black87),
                     ),
-                    title: const Text('Apple Maps', style: TextStyle(fontWeight: FontWeight.w600)),
+                    title: const Text(
+                      'Apple Maps',
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
                     subtitle: const Text('Native iOS navigation'),
                     onTap: () {
                       Navigator.pop(ctx);

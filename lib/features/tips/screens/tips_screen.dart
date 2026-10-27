@@ -12,6 +12,7 @@ class TipsScreen extends ConsumerStatefulWidget {
 
 class _TipsScreenState extends ConsumerState<TipsScreen> {
   String _selectedFilter = 'All'; // 'All', 'Pending', 'Completed'
+  String _search = '';
 
   IconData _getCategoryIcon(String category) {
     switch (category) {
@@ -83,17 +84,38 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
                   const SizedBox(height: 12),
                   Row(
                     children: [
-                      const Text('Category: ', style: TextStyle(fontWeight: FontWeight.w600)),
+                      const Text(
+                        'Category: ',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
                       const SizedBox(width: 8),
                       DropdownButton<String>(
                         value: category,
                         items: const [
-                          DropdownMenuItem(value: 'general', child: Text('General')),
-                          DropdownMenuItem(value: 'toll', child: Text('Tolls / SunPass')),
-                          DropdownMenuItem(value: 'ticket', child: Text('Tickets / Passes')),
-                          DropdownMenuItem(value: 'dining', child: Text('Dining')),
-                          DropdownMenuItem(value: 'shopping', child: Text('Shopping')),
-                          DropdownMenuItem(value: 'airport', child: Text('Flight / Airport')),
+                          DropdownMenuItem(
+                            value: 'general',
+                            child: Text('General'),
+                          ),
+                          DropdownMenuItem(
+                            value: 'toll',
+                            child: Text('Tolls / SunPass'),
+                          ),
+                          DropdownMenuItem(
+                            value: 'ticket',
+                            child: Text('Tickets / Passes'),
+                          ),
+                          DropdownMenuItem(
+                            value: 'dining',
+                            child: Text('Dining'),
+                          ),
+                          DropdownMenuItem(
+                            value: 'shopping',
+                            child: Text('Shopping'),
+                          ),
+                          DropdownMenuItem(
+                            value: 'airport',
+                            child: Text('Flight / Airport'),
+                          ),
                         ],
                         onChanged: (val) {
                           if (val != null) setModalState(() => category = val);
@@ -108,13 +130,17 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
                     child: FilledButton(
                       style: FilledButton.styleFrom(
                         backgroundColor: const Color(0xFF0F766E),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
                       ),
                       onPressed: () {
                         final title = titleController.text.trim();
                         final content = contentController.text.trim();
                         if (title.isNotEmpty) {
-                          ref.read(tipsProvider.notifier).addTip(
+                          ref
+                              .read(tipsProvider.notifier)
+                              .addTip(
                                 TripTip(
                                   category: category,
                                   title: title,
@@ -141,9 +167,7 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
     final tipsAsync = ref.watch(tipsProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('💡 Tips & Reminders'),
-      ),
+      appBar: AppBar(title: const Text('💡 Tips & Reminders')),
       body: Column(
         children: [
           // Filter Chips (All, Pending, Completed)
@@ -153,22 +177,38 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
               children: [
                 ChoiceChip(
                   label: const Text('All'),
+                  labelStyle: const TextStyle(color: Colors.black),
                   selected: _selectedFilter == 'All',
                   onSelected: (val) => setState(() => _selectedFilter = 'All'),
                 ),
                 const SizedBox(width: 8),
                 ChoiceChip(
                   label: const Text('Pending'),
+                  labelStyle: const TextStyle(color: Colors.black),
                   selected: _selectedFilter == 'Pending',
-                  onSelected: (val) => setState(() => _selectedFilter = 'Pending'),
+                  onSelected: (val) =>
+                      setState(() => _selectedFilter = 'Pending'),
                 ),
                 const SizedBox(width: 8),
                 ChoiceChip(
                   label: const Text('Completed'),
+                  labelStyle: const TextStyle(color: Colors.black),
                   selected: _selectedFilter == 'Completed',
-                  onSelected: (val) => setState(() => _selectedFilter = 'Completed'),
+                  onSelected: (val) =>
+                      setState(() => _selectedFilter = 'Completed'),
                 ),
               ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+            child: TextField(
+              onChanged: (value) => setState(() => _search = value),
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.search),
+                hintText: 'Pesquisar dicas...',
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
 
@@ -177,9 +217,17 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
             child: tipsAsync.when(
               data: (tips) {
                 final filtered = tips.where((t) {
-                  if (_selectedFilter == 'Pending') return !t.isCompleted;
-                  if (_selectedFilter == 'Completed') return t.isCompleted;
-                  return true;
+                  final q = _search.trim().toLowerCase();
+                  final statusMatches = _selectedFilter == 'Pending'
+                      ? !t.isCompleted
+                      : _selectedFilter == 'Completed'
+                      ? t.isCompleted
+                      : true;
+                  final textMatches =
+                      q.isEmpty ||
+                      t.title.toLowerCase().contains(q) ||
+                      t.content.toLowerCase().contains(q);
+                  return statusMatches && textMatches;
                 }).toList();
 
                 if (filtered.isEmpty) {
@@ -187,11 +235,18 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.checklist_rounded, size: 48, color: Colors.grey[400]),
+                        Icon(
+                          Icons.checklist_rounded,
+                          size: 48,
+                          color: Colors.grey[400],
+                        ),
                         const SizedBox(height: 12),
                         Text(
                           'No reminders in this category',
-                          style: TextStyle(color: Colors.grey[600], fontSize: 14),
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            fontSize: 14,
+                          ),
                         ),
                       ],
                     ),
@@ -221,8 +276,12 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
                           tip.title,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            decoration: tip.isCompleted ? TextDecoration.lineThrough : null,
-                            color: tip.isCompleted ? Colors.grey : const Color(0xFF0F172A),
+                            decoration: tip.isCompleted
+                                ? TextDecoration.lineThrough
+                                : null,
+                            color: tip.isCompleted
+                                ? Colors.grey
+                                : const Color(0xFF0F172A),
                           ),
                         ),
                         subtitle: Padding(
@@ -231,7 +290,9 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
                             tip.content,
                             style: TextStyle(
                               fontSize: 13,
-                              color: tip.isCompleted ? Colors.grey[500] : const Color(0xFF475569),
+                              color: tip.isCompleted
+                                  ? Colors.grey[500]
+                                  : const Color(0xFF475569),
                             ),
                           ),
                         ),
@@ -240,7 +301,9 @@ class _TipsScreenState extends ConsumerState<TipsScreen> {
                           activeColor: const Color(0xFF0F766E),
                           onChanged: (val) {
                             if (val != null && tip.id != null) {
-                              ref.read(tipsProvider.notifier).toggleTip(tip.id!, val);
+                              ref
+                                  .read(tipsProvider.notifier)
+                                  .toggleTip(tip.id!, val);
                             }
                           },
                         ),

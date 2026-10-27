@@ -15,8 +15,8 @@ void main() async {
     databaseFactory = databaseFactoryFfiWeb;
   } else if (!kIsWeb &&
       (defaultTargetPlatform == TargetPlatform.windows ||
-       defaultTargetPlatform == TargetPlatform.linux ||
-       defaultTargetPlatform == TargetPlatform.macOS)) {
+          defaultTargetPlatform == TargetPlatform.linux ||
+          defaultTargetPlatform == TargetPlatform.macOS)) {
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
   }
@@ -24,20 +24,16 @@ void main() async {
   // Initialize SQLite database and auto-seed if needed
   await AppDatabase.instance.database;
 
-  runApp(
-    const ProviderScope(
-      child: FloridaTripApp(),
-    ),
-  );
+  runApp(const ProviderScope(child: NomadtripApp()));
 }
 
-class FloridaTripApp extends StatelessWidget {
-  const FloridaTripApp({super.key});
+class NomadtripApp extends StatelessWidget {
+  const NomadtripApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Florida Trip 2026',
+      title: 'nomadtrip',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       home: const HomeScreen(),

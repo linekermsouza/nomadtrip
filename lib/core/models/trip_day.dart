@@ -1,6 +1,13 @@
 import 'itinerary_place.dart';
 
-/// Represents a single day in the Florida trip itinerary.
+String formatDayLabel(int dayNumber, Iterable<TripDay> days) {
+  if (dayNumber == 0) return 'No Day';
+  final day = days.where((item) => item.dayNumber == dayNumber).firstOrNull;
+  if (day == null) return 'Day $dayNumber';
+  return day.displayLabel;
+}
+
+/// Represents a single day in the nomadtrip itinerary.
 class TripDay {
   final int dayNumber;
   final String date; // Format: YYYY-MM-DD
@@ -31,7 +38,20 @@ class TripDay {
     };
   }
 
-  factory TripDay.fromMap(Map<String, dynamic> map, [List<ItineraryPlace> places = const []]) {
+  String get displayDate {
+    if (date.isEmpty) return '';
+    final parts = date.split('-');
+    return parts.length == 3 ? '${parts[2]}/${parts[1]}' : date;
+  }
+
+  String get displayLabel => dayNumber == 0
+      ? 'No Day'
+      : 'Day $dayNumber${displayDate.isEmpty ? '' : ' $displayDate'}${weekday.isEmpty ? '' : ' (${weekday.substring(0, weekday.length < 3 ? weekday.length : 3)})'}';
+
+  factory TripDay.fromMap(
+    Map<String, dynamic> map, [
+    List<ItineraryPlace> places = const [],
+  ]) {
     return TripDay(
       dayNumber: map['day_number'] as int,
       date: map['date'] as String,

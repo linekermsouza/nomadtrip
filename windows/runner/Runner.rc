@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.floridatrip" "\0"
-            VALUE "FileDescription", "florida_trip" "\0"
+            VALUE "CompanyName", "com.nomadtrip" "\0"
+            VALUE "FileDescription", "nomadtrip" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "florida_trip" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.floridatrip. All rights reserved." "\0"
-            VALUE "OriginalFilename", "florida_trip.exe" "\0"
-            VALUE "ProductName", "florida_trip" "\0"
+            VALUE "InternalName", "nomadtrip" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 com.nomadtrip. All rights reserved." "\0"
+            VALUE "OriginalFilename", "nomadtrip.exe" "\0"
+            VALUE "ProductName", "nomadtrip" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

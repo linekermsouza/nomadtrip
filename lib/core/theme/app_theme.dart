@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static const Color primaryColor = Color(0xFF0F766E); // Florida Teal / Ocean
-  static const Color accentColor = Color(0xFFF97316);  // Florida Sunshine Orange
+  static const Color accentColor = Color(0xFFF97316); // Florida Sunshine Orange
   static const Color backgroundColor = Color(0xFFF8FAFC);
   static const Color surfaceColor = Colors.white;
   static const Color visitedColor = Color(0xFF10B981); // Emerald Green
@@ -52,8 +52,14 @@ class AppTheme {
         unselectedItemColor: Color(0xFF94A3B8),
         type: BottomNavigationBarType.fixed,
         elevation: 8,
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
-        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal, fontSize: 12),
+        selectedLabelStyle: TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 12,
+        ),
+        unselectedLabelStyle: TextStyle(
+          fontWeight: FontWeight.normal,
+          fontSize: 12,
+        ),
       ),
     );
   }

@@ -1,6 +1,6 @@
 # 🌴 Florida Trip Companion - Technical & Functional Specification
 
-> **Project Name**: Florida Trip Companion (`florida_trip`)  
+> **Project Name**: nomadtrip  
 > **Target Audience**: Travelers embarking on multi-destination road trips across Florida (Miami, Orlando, Tampa, St. Augustine, and the Florida Keys).  
 > **Platforms**: Android (Primary Target), iOS (Production Target), Web/Chrome (Development & Preview).  
 > **Version**: 1.0.0  

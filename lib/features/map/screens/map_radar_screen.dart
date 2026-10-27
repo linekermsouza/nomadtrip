@@ -3,6 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:latlong2/latlong.dart';
 import '../../../core/models/itinerary_place.dart';
+import '../../../core/models/trip_day.dart';
 import '../../../core/services/location_service.dart';
 import '../../../core/services/navigation_launcher.dart';
 import '../../itinerary/providers/itinerary_provider.dart';
@@ -35,7 +36,9 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not retrieve current GPS location')),
+          const SnackBar(
+            content: Text('Could not retrieve current GPS location'),
+          ),
         );
       }
     }
@@ -59,7 +62,10 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
       body: daysAsync.when(
         data: (days) {
           // Extract all places with valid coordinates
-          final allPlaces = days.expand((d) => d.places).where((p) => p.latitude != 0.0 && p.longitude != 0.0).toList();
+          final allPlaces = days
+              .expand((d) => d.places)
+              .where((p) => p.latitude != 0.0 && p.longitude != 0.0)
+              .toList();
           final visiblePlaces = _showOnlyUnvisited
               ? allPlaces.where((p) => !p.isVisited).toList()
               : allPlaces;
@@ -81,7 +87,9 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                   decoration: BoxDecoration(
                     color: place.isVisited
                         ? const Color(0xFF64748B) // Slate for visited
-                        : (isSelected ? const Color(0xFFF97316) : const Color(0xFF0F766E)),
+                        : (isSelected
+                              ? const Color(0xFFF97316)
+                              : const Color(0xFF0F766E)),
                     shape: BoxShape.circle,
                     border: Border.all(color: Colors.white, width: 2),
                     boxShadow: [
@@ -113,8 +121,9 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                 ),
                 children: [
                   TileLayer(
-                    urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    userAgentPackageName: 'com.floridatrip.florida_trip',
+                    urlTemplate:
+                        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    userAgentPackageName: 'com.nomadtrip.app',
                   ),
                   MarkerLayer(markers: markers),
                 ],
@@ -131,15 +140,21 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                     children: [
                       FilterChip(
                         avatar: Icon(
-                          _showOnlyUnvisited ? Icons.check_box_rounded : Icons.check_box_outline_blank_rounded,
+                          _showOnlyUnvisited
+                              ? Icons.check_box_rounded
+                              : Icons.check_box_outline_blank_rounded,
                           size: 16,
-                          color: _showOnlyUnvisited ? Colors.white : Colors.black87,
+                          color: _showOnlyUnvisited
+                              ? Colors.white
+                              : Colors.black87,
                         ),
                         label: const Text('Only Unvisited'),
                         selected: _showOnlyUnvisited,
                         selectedColor: const Color(0xFF0F766E),
                         labelStyle: TextStyle(
-                          color: _showOnlyUnvisited ? Colors.white : Colors.black87,
+                          color: _showOnlyUnvisited
+                              ? Colors.white
+                              : Colors.black87,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                         ),
@@ -149,20 +164,41 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                       ),
                       const SizedBox(width: 8),
                       ActionChip(
-                        label: const Text('Orlando'),
-                        avatar: const Icon(Icons.castle_rounded, size: 14),
+                        label: const Text(
+                          'Orlando',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        avatar: const Icon(
+                          Icons.castle_rounded,
+                          size: 14,
+                          color: Colors.black,
+                        ),
                         onPressed: () => _jumpTo(_orlandoCenter, 11),
                       ),
                       const SizedBox(width: 6),
                       ActionChip(
-                        label: const Text('Miami'),
-                        avatar: const Icon(Icons.beach_access_rounded, size: 14),
+                        label: const Text(
+                          'Miami',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        avatar: const Icon(
+                          Icons.beach_access_rounded,
+                          size: 14,
+                          color: Colors.black,
+                        ),
                         onPressed: () => _jumpTo(_miamiCenter, 12),
                       ),
                       const SizedBox(width: 6),
                       ActionChip(
-                        label: const Text('Key West'),
-                        avatar: const Icon(Icons.wb_sunny_rounded, size: 14),
+                        label: const Text(
+                          'Key West',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        avatar: const Icon(
+                          Icons.wb_sunny_rounded,
+                          size: 14,
+                          color: Colors.black,
+                        ),
                         onPressed: () => _jumpTo(_keyWestCenter, 13),
                       ),
                     ],
@@ -178,7 +214,9 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                   right: 16,
                   child: Card(
                     elevation: 6,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(
@@ -188,13 +226,18 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                           Row(
                             children: [
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 3,
+                                ),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF0F766E).withValues(alpha: 0.1),
+                                  color: const Color(
+                                    0xFF0F766E,
+                                  ).withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Text(
-                                  'Day ${_selectedPlace!.dayNumber} • ${_selectedPlace!.time}',
+                                  '${formatDayLabel(_selectedPlace!.dayNumber, days)} • ${_selectedPlace!.time}',
                                   style: const TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -205,14 +248,18 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                               const Spacer(),
                               IconButton(
                                 icon: const Icon(Icons.close_rounded, size: 18),
-                                onPressed: () => setState(() => _selectedPlace = null),
+                                onPressed: () =>
+                                    setState(() => _selectedPlace = null),
                               ),
                             ],
                           ),
                           const SizedBox(height: 6),
                           Text(
                             _selectedPlace!.name,
-                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           if (_selectedPlace!.rawDescription.isNotEmpty) ...[
                             const SizedBox(height: 4),
@@ -220,7 +267,10 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                               _selectedPlace!.rawDescription,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey[700],
+                              ),
                             ),
                           ],
                           const SizedBox(height: 12),
@@ -228,7 +278,10 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                             children: [
                               Expanded(
                                 child: FilledButton.icon(
-                                  icon: const Icon(Icons.navigation_rounded, size: 16),
+                                  icon: const Icon(
+                                    Icons.navigation_rounded,
+                                    size: 16,
+                                  ),
                                   label: const Text('Navigate'),
                                   style: FilledButton.styleFrom(
                                     backgroundColor: const Color(0xFF0F766E),

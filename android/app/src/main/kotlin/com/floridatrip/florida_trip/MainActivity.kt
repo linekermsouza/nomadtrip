@@ -1,4 +1,4 @@
-package com.floridatrip.florida_trip
+package com.nomadtrip.app
 
 import io.flutter.embedding.android.FlutterActivity
 

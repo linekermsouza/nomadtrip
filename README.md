@@ -1,4 +1,4 @@
-# 🌴 Florida Trip Companion
+# 🌴 nomadtrip
 
 An offline-first, feature-packed travel companion app built with **Flutter**, designed specifically for a 20-day road trip across Florida (Miami, Orlando, Tampa, St. Augustine, and the Florida Keys).
 

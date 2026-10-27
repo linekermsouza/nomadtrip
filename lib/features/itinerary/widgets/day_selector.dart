@@ -23,34 +23,41 @@ class DaySelector extends ConsumerWidget {
               final day = days[index];
               final isSelected = day.dayNumber == selectedDay;
 
-              // Parse date for clean display: DD/MM
-              final dateParts = day.date.split('-');
-              final shortDate = dateParts.length == 3 ? '${dateParts[2]}/${dateParts[1]}' : day.date;
-
               return Material(
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    ref.read(selectedDayNumberProvider.notifier).selectDay(day.dayNumber);
+                    ref
+                        .read(selectedDayNumberProvider.notifier)
+                        .selectDay(day.dayNumber);
                   },
                   borderRadius: BorderRadius.circular(14),
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 8,
+                    ),
                     decoration: BoxDecoration(
-                      color: isSelected ? const Color(0xFF0F766E) : Colors.white,
+                      color: isSelected
+                          ? const Color(0xFF0F766E)
+                          : Colors.white,
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(
-                        color: isSelected ? const Color(0xFF0F766E) : const Color(0xFFE2E8F0),
+                        color: isSelected
+                            ? const Color(0xFF0F766E)
+                            : const Color(0xFFE2E8F0),
                         width: 1.5,
                       ),
                       boxShadow: isSelected
                           ? [
                               BoxShadow(
-                                color: const Color(0xFF0F766E).withValues(alpha: 0.25),
+                                color: const Color(
+                                  0xFF0F766E,
+                                ).withValues(alpha: 0.25),
                                 blurRadius: 6,
                                 offset: const Offset(0, 3),
-                              )
+                              ),
                             ]
                           : [],
                     ),
@@ -58,19 +65,27 @@ class DaySelector extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Day ${day.dayNumber}',
+                          day.dayNumber == 0
+                              ? 'No Day'
+                              : 'Day ${day.dayNumber}',
                           style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
-                            color: isSelected ? Colors.white : const Color(0xFF1E293B),
+                            color: isSelected
+                                ? Colors.white
+                                : const Color(0xFF1E293B),
                           ),
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          '$shortDate (${day.weekday.substring(0, 3)})',
+                          day.dayNumber == 0
+                              ? 'Unscheduled'
+                              : '${day.displayDate} (${day.weekday.substring(0, day.weekday.length < 3 ? day.weekday.length : 3)})',
                           style: TextStyle(
                             fontSize: 11,
-                            color: isSelected ? Colors.white70 : const Color(0xFF64748B),
+                            color: isSelected
+                                ? Colors.white70
+                                : const Color(0xFF64748B),
                           ),
                         ),
                       ],

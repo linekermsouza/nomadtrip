@@ -1,7 +1,8 @@
-/// Represents a practical tip or checklist reminder for the Florida trip.
+/// Represents a practical tip or checklist reminder for nomadtrip.
 class TripTip {
   final int? id;
-  final String category; // 'toll', 'ticket', 'dining', 'shopping', 'pitstop', 'timing', 'airport'
+  final String
+  category; // 'toll', 'ticket', 'dining', 'shopping', 'pitstop', 'timing', 'airport'
   final String title;
   final String content;
   final bool isCompleted;

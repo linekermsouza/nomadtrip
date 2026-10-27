@@ -21,6 +21,7 @@ class _PlaceEditDialogState extends ConsumerState<PlaceEditDialog> {
   late String _parking;
   late int _parkingCost;
   late List<String> _links;
+  late bool _isAlternative;
 
   @override
   void initState() {
@@ -33,6 +34,7 @@ class _PlaceEditDialogState extends ConsumerState<PlaceEditDialog> {
     _parking = widget.place.parking;
     _parkingCost = widget.place.parkingCost;
     _links = List.from(widget.place.links);
+    _isAlternative = widget.place.isAlternative;
   }
 
   @override
@@ -63,9 +65,14 @@ class _PlaceEditDialogState extends ConsumerState<PlaceEditDialog> {
       parking: _parking,
       parkingCost: _parkingCost,
       links: _links,
+      isAlternative: _isAlternative,
     );
 
-    ref.read(itineraryProvider.notifier).updatePlace(updated);
+    if (widget.place.id == null) {
+      ref.read(itineraryProvider.notifier).addPlace(updated);
+    } else {
+      ref.read(itineraryProvider.notifier).updatePlace(updated);
+    }
     Navigator.pop(context);
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Place updated successfully!')),
@@ -77,7 +84,9 @@ class _PlaceEditDialogState extends ConsumerState<PlaceEditDialog> {
       context: context,
       builder: (ctx) => AlertDialog(
         title: const Text('Delete Place'),
-        content: Text('Are you sure you want to remove "${widget.place.name}" from the itinerary?'),
+        content: Text(
+          'Are you sure you want to remove "${widget.place.name}" from the itinerary?',
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
@@ -89,7 +98,9 @@ class _PlaceEditDialogState extends ConsumerState<PlaceEditDialog> {
               Navigator.pop(ctx); // Close alert
               Navigator.pop(context); // Close sheet
               if (widget.place.id != null) {
-                ref.read(itineraryProvider.notifier).deletePlace(widget.place.id!);
+                ref
+                    .read(itineraryProvider.notifier)
+                    .deletePlace(widget.place.id!);
               }
             },
             child: const Text('Delete'),
@@ -115,16 +126,22 @@ class _PlaceEditDialogState extends ConsumerState<PlaceEditDialog> {
           children: [
             Row(
               children: [
-                const Icon(Icons.edit_location_alt_rounded, color: Color(0xFF0F766E)),
+                const Icon(
+                  Icons.edit_location_alt_rounded,
+                  color: Color(0xFF0F766E),
+                ),
                 const SizedBox(width: 8),
                 const Expanded(
                   child: Text(
-                    'Edit Itinerary Stop',
+                    'Add Itinerary Stop',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.delete_outline_rounded, color: Colors.red),
+                  icon: const Icon(
+                    Icons.delete_outline_rounded,
+                    color: Colors.red,
+                  ),
                   tooltip: 'Delete stop',
                   onPressed: _delete,
                 ),
@@ -132,26 +149,56 @@ class _PlaceEditDialogState extends ConsumerState<PlaceEditDialog> {
             ),
             const SizedBox(height: 16),
 
-            // Move to another Day selector
+            // Schedule selector
             Row(
               children: [
-                const Text('Scheduled for: ', style: TextStyle(fontWeight: FontWeight.w600)),
+                const Text(
+                  'Scheduled for: ',
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
                 const SizedBox(width: 8),
-                DropdownButton<int>(
-                  value: _selectedDay,
-                  items: List.generate(20, (index) => index + 1).map((d) {
-                    return DropdownMenuItem(
-                      value: d,
-                      child: Text('Day $d'),
-                    );
-                  }).toList(),
-                  onChanged: (val) {
-                    if (val != null) setState(() => _selectedDay = val);
-                  },
+                Expanded(
+                  child: DropdownButton<int>(
+                    value: _selectedDay,
+                    isExpanded: true,
+                    items: [0, ...List.generate(20, (index) => index + 1)].map((
+                      d,
+                    ) {
+                      final days =
+                          ref.read(itineraryProvider).value ?? const [];
+                      final day = days
+                          .where((item) => item.dayNumber == d)
+                          .firstOrNull;
+                      return DropdownMenuItem(
+                        value: d,
+                        child: Text(
+                          d == 0 ? 'No Day' : day?.displayLabel ?? 'Day $d',
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (val) {
+                      if (val != null) setState(() => _selectedDay = val);
+                    },
+                  ),
                 ),
               ],
             ),
             const SizedBox(height: 12),
+
+            CheckboxListTile(
+              contentPadding: EdgeInsets.zero,
+              value: _isAlternative,
+              onChanged: (value) =>
+                  setState(() => _isAlternative = value ?? false),
+              title: const Text(
+                'Alternative option',
+                style: TextStyle(fontWeight: FontWeight.w600),
+              ),
+              subtitle: const Text(
+                'Highlight this stop as an alternative for the time/day.',
+              ),
+              controlAffinity: ListTileControlAffinity.leading,
+            ),
 
             // Name
             TextField(
@@ -243,7 +290,9 @@ class _PlaceEditDialogState extends ConsumerState<PlaceEditDialog> {
                 label: const Text('Save Changes'),
                 style: FilledButton.styleFrom(
                   backgroundColor: const Color(0xFF0F766E),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
                 onPressed: _save,
               ),
