@@ -1,4 +1,12 @@
+import 'dart:convert';
+import 'checklist_item.dart';
 import 'itinerary_place.dart';
+
+export 'checklist_item.dart';
+
+String cleanMarkdownDecorations(String text) {
+  return text.replaceAll('**', '').replaceAll('__', '');
+}
 
 String formatDayLabel(int dayNumber, Iterable<TripDay> days) {
   if (dayNumber == 0) return 'No Day';
@@ -9,32 +17,41 @@ String formatDayLabel(int dayNumber, Iterable<TripDay> days) {
 
 /// Represents a single day in the nomadtrip itinerary.
 class TripDay {
+  final int? id;
+  final int tripId;
   final int dayNumber;
   final String date; // Format: YYYY-MM-DD
   final String weekday;
   final String title;
   final String lodgingCity;
   final String wakeupCity;
+  final List<ChecklistItem> checklist;
   final List<ItineraryPlace> places;
 
   const TripDay({
+    this.id,
+    this.tripId = 1,
     required this.dayNumber,
     required this.date,
     required this.weekday,
     required this.title,
     required this.lodgingCity,
     required this.wakeupCity,
+    this.checklist = const [],
     this.places = const [],
   });
 
   Map<String, dynamic> toMap() {
     return {
+      if (id != null) 'id': id,
+      'trip_id': tripId,
       'day_number': dayNumber,
       'date': date,
       'weekday': weekday,
-      'title': title,
-      'lodging_city': lodgingCity,
-      'wakeup_city': wakeupCity,
+      'title': cleanMarkdownDecorations(title),
+      'lodging_city': cleanMarkdownDecorations(lodgingCity),
+      'wakeup_city': cleanMarkdownDecorations(wakeupCity),
+      'checklist': jsonEncode(checklist.map((c) => c.toMap()).toList()),
     };
   }
 
@@ -52,33 +69,63 @@ class TripDay {
     Map<String, dynamic> map, [
     List<ItineraryPlace> places = const [],
   ]) {
+    List<ChecklistItem> parsedChecklist = [];
+    if (map['checklist'] != null) {
+      try {
+        final decoded = map['checklist'] is String
+            ? jsonDecode(map['checklist'] as String)
+            : map['checklist'];
+        if (decoded is List) {
+          parsedChecklist = decoded
+              .map(
+                (c) =>
+                    ChecklistItem.fromMap(Map<String, dynamic>.from(c as Map)),
+              )
+              .toList();
+        }
+      } catch (_) {}
+    }
+
     return TripDay(
-      dayNumber: map['day_number'] as int,
-      date: map['date'] as String,
-      weekday: map['weekday'] as String,
-      title: map['title'] as String,
-      lodgingCity: map['lodging_city'] as String,
-      wakeupCity: map['wakeup_city'] as String,
+      id: (map['id'] as num?)?.toInt(),
+      tripId: (map['trip_id'] as num?)?.toInt() ?? 1,
+      dayNumber: (map['day_number'] as num?)?.toInt() ?? 0,
+      date: (map['date'] as String?) ?? '',
+      weekday: (map['weekday'] as String?) ?? '',
+      title: cleanMarkdownDecorations((map['title'] as String?) ?? ''),
+      lodgingCity: cleanMarkdownDecorations(
+        (map['lodging_city'] as String?) ?? '',
+      ),
+      wakeupCity: cleanMarkdownDecorations(
+        (map['wakeup_city'] as String?) ?? '',
+      ),
+      checklist: parsedChecklist,
       places: places,
     );
   }
 
   TripDay copyWith({
+    int? id,
+    int? tripId,
     int? dayNumber,
     String? date,
     String? weekday,
     String? title,
     String? lodgingCity,
     String? wakeupCity,
+    List<ChecklistItem>? checklist,
     List<ItineraryPlace>? places,
   }) {
     return TripDay(
+      id: id ?? this.id,
+      tripId: tripId ?? this.tripId,
       dayNumber: dayNumber ?? this.dayNumber,
       date: date ?? this.date,
       weekday: weekday ?? this.weekday,
       title: title ?? this.title,
       lodgingCity: lodgingCity ?? this.lodgingCity,
       wakeupCity: wakeupCity ?? this.wakeupCity,
+      checklist: checklist ?? this.checklist,
       places: places ?? this.places,
     );
   }

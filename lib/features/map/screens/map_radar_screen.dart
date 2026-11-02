@@ -7,6 +7,7 @@ import '../../../core/models/trip_day.dart';
 import '../../../core/services/location_service.dart';
 import '../../../core/services/navigation_launcher.dart';
 import '../../itinerary/providers/itinerary_provider.dart';
+import '../../itinerary/screens/place_detail_screen.dart';
 
 class MapRadarScreen extends ConsumerStatefulWidget {
   const MapRadarScreen({super.key});
@@ -20,13 +21,34 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
   bool _showOnlyUnvisited = false;
   ItineraryPlace? _selectedPlace;
 
-  // Key Florida focus coordinates
-  static const LatLng _orlandoCenter = LatLng(28.4310, -81.4700);
-  static const LatLng _miamiCenter = LatLng(25.7617, -80.1918);
-  static const LatLng _keyWestCenter = LatLng(24.5551, -81.7800);
+  // Mutual exclusive filters (Item 34)
+  int? _selectedDayFilter;
+  String? _selectedCityFilter;
 
   void _jumpTo(LatLng target, double zoom) {
     _mapController.move(target, zoom);
+  }
+
+  void _fitBounds(List<LatLng> points) {
+    if (points.isEmpty) return;
+    if (points.length == 1) {
+      _mapController.move(points.first, 14);
+      return;
+    }
+    double minLat = points.first.latitude;
+    double maxLat = points.first.latitude;
+    double minLng = points.first.longitude;
+    double maxLng = points.first.longitude;
+
+    for (final p in points) {
+      if (p.latitude < minLat) minLat = p.latitude;
+      if (p.latitude > maxLat) maxLat = p.latitude;
+      if (p.longitude < minLng) minLng = p.longitude;
+      if (p.longitude > maxLng) maxLng = p.longitude;
+    }
+
+    final center = LatLng((minLat + maxLat) / 2, (minLng + maxLng) / 2);
+    _mapController.move(center, 12);
   }
 
   void _locateUser() async {
@@ -37,11 +59,67 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Could not retrieve current GPS location'),
+            content: Text('Não foi possível obter a localização GPS atual'),
           ),
         );
       }
     }
+  }
+
+  void _toggleDayFilter(int dayNumber, List<ItineraryPlace> allPlaces) {
+    setState(() {
+      if (_selectedDayFilter == dayNumber) {
+        // Deselect day
+        _selectedDayFilter = null;
+        final valid = allPlaces
+            .map((p) => LatLng(p.latitude, p.longitude))
+            .toList();
+        if (valid.isNotEmpty) _fitBounds(valid);
+      } else {
+        // Select day & deselect city (mutual exclusivity, Item 34)
+        _selectedDayFilter = dayNumber;
+        _selectedCityFilter = null;
+        _selectedPlace = null;
+        final dayPoints = allPlaces
+            .where((p) => p.dayNumber == dayNumber)
+            .map((p) => LatLng(p.latitude, p.longitude))
+            .toList();
+        if (dayPoints.isNotEmpty) {
+          _fitBounds(dayPoints);
+        }
+      }
+    });
+  }
+
+  void _toggleCityFilter(
+    String city,
+    List<ItineraryPlace> allPlaces,
+    LatLng center,
+  ) {
+    setState(() {
+      if (_selectedCityFilter == city) {
+        // Deselect city
+        _selectedCityFilter = null;
+        final valid = allPlaces
+            .map((p) => LatLng(p.latitude, p.longitude))
+            .toList();
+        if (valid.isNotEmpty) _fitBounds(valid);
+      } else {
+        // Select city & deselect day (mutual exclusivity, Item 34)
+        _selectedCityFilter = city;
+        _selectedDayFilter = null;
+        _selectedPlace = null;
+        final cityPoints = allPlaces
+            .where((p) => p.city.toLowerCase() == city.toLowerCase())
+            .map((p) => LatLng(p.latitude, p.longitude))
+            .toList();
+        if (cityPoints.isNotEmpty) {
+          _fitBounds(cityPoints);
+        } else {
+          _jumpTo(center, 12);
+        }
+      }
+    });
   }
 
   @override
@@ -50,27 +128,55 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('🗺️ Florida Map & Radar'),
+        title: const Text('🗺️ Mapa & Radar'),
         actions: [
           IconButton(
             icon: const Icon(Icons.my_location_rounded),
-            tooltip: 'My Location',
+            tooltip: 'Minha Localização',
             onPressed: _locateUser,
           ),
         ],
       ),
       body: daysAsync.when(
         data: (days) {
-          // Extract all places with valid coordinates
-          final allPlaces = days
+          final allValidPlaces = days
               .expand((d) => d.places)
               .where((p) => p.latitude != 0.0 && p.longitude != 0.0)
               .toList();
-          final visiblePlaces = _showOnlyUnvisited
-              ? allPlaces.where((p) => !p.isVisited).toList()
-              : allPlaces;
 
-          final markers = visiblePlaces.map((place) {
+          // Extract dynamic cities from current trip (Item 27)
+          final Map<String, List<LatLng>> cityPointsMap = {};
+          for (final p in allValidPlaces) {
+            final c = p.city.trim();
+            if (c.isNotEmpty) {
+              cityPointsMap
+                  .putIfAbsent(c, () => [])
+                  .add(LatLng(p.latitude, p.longitude));
+            }
+          }
+          final dynamicCities = cityPointsMap.keys.toList()..sort();
+
+          // Filter places based on active day or city filter (Item 34)
+          List<ItineraryPlace> filteredPlaces = allValidPlaces;
+          if (_selectedDayFilter != null) {
+            filteredPlaces = filteredPlaces
+                .where((p) => p.dayNumber == _selectedDayFilter)
+                .toList();
+          } else if (_selectedCityFilter != null) {
+            filteredPlaces = filteredPlaces
+                .where(
+                  (p) =>
+                      p.city.toLowerCase() ==
+                      _selectedCityFilter!.toLowerCase(),
+                )
+                .toList();
+          }
+
+          if (_showOnlyUnvisited) {
+            filteredPlaces = filteredPlaces.where((p) => !p.isVisited).toList();
+          }
+
+          final markers = filteredPlaces.map((place) {
             final isSelected = _selectedPlace?.id == place.id;
             return Marker(
               point: LatLng(place.latitude, place.longitude),
@@ -86,7 +192,7 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                   duration: const Duration(milliseconds: 200),
                   decoration: BoxDecoration(
                     color: place.isVisited
-                        ? const Color(0xFF64748B) // Slate for visited
+                        ? const Color(0xFF64748B)
                         : (isSelected
                               ? const Color(0xFFF97316)
                               : const Color(0xFF0F766E)),
@@ -110,13 +216,20 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
             );
           }).toList();
 
+          final initialCenter = allValidPlaces.isNotEmpty
+              ? LatLng(
+                  allValidPlaces.first.latitude,
+                  allValidPlaces.first.longitude,
+                )
+              : const LatLng(28.4310, -81.4700);
+
           return Stack(
             children: [
               // OpenStreetMap widget
               FlutterMap(
                 mapController: _mapController,
-                options: const MapOptions(
-                  initialCenter: _orlandoCenter,
+                options: MapOptions(
+                  initialCenter: initialCenter,
                   initialZoom: 10.5,
                 ),
                 children: [
@@ -129,7 +242,7 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                 ],
               ),
 
-              // Filter & Navigation Chips Header
+              // Top Bar: Unvisited toggle + Dynamic Cities (Item 27)
               Positioned(
                 top: 12,
                 left: 12,
@@ -148,7 +261,7 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                               ? Colors.white
                               : Colors.black87,
                         ),
-                        label: const Text('Only Unvisited'),
+                        label: const Text('Não visitados'),
                         selected: _showOnlyUnvisited,
                         selectedColor: const Color(0xFF0F766E),
                         labelStyle: TextStyle(
@@ -163,53 +276,56 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                         },
                       ),
                       const SizedBox(width: 8),
-                      ActionChip(
-                        label: const Text(
-                          'Orlando',
-                          style: TextStyle(color: Colors.black),
-                        ),
-                        avatar: const Icon(
-                          Icons.castle_rounded,
-                          size: 14,
-                          color: Colors.black,
-                        ),
-                        onPressed: () => _jumpTo(_orlandoCenter, 11),
-                      ),
-                      const SizedBox(width: 6),
-                      ActionChip(
-                        label: const Text(
-                          'Miami',
-                          style: TextStyle(color: Colors.black),
-                        ),
-                        avatar: const Icon(
-                          Icons.beach_access_rounded,
-                          size: 14,
-                          color: Colors.black,
-                        ),
-                        onPressed: () => _jumpTo(_miamiCenter, 12),
-                      ),
-                      const SizedBox(width: 6),
-                      ActionChip(
-                        label: const Text(
-                          'Key West',
-                          style: TextStyle(color: Colors.black),
-                        ),
-                        avatar: const Icon(
-                          Icons.wb_sunny_rounded,
-                          size: 14,
-                          color: Colors.black,
-                        ),
-                        onPressed: () => _jumpTo(_keyWestCenter, 13),
-                      ),
+                      // Dynamic cities chips from current trip!
+                      ...dynamicCities.map((city) {
+                        final pts = cityPointsMap[city]!;
+                        final avgLat =
+                            pts.map((p) => p.latitude).reduce((a, b) => a + b) /
+                            pts.length;
+                        final avgLng =
+                            pts
+                                .map((p) => p.longitude)
+                                .reduce((a, b) => a + b) /
+                            pts.length;
+                        final isSelected =
+                            _selectedCityFilter?.toLowerCase() ==
+                            city.toLowerCase();
+
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 6),
+                          child: FilterChip(
+                            label: Text(city),
+                            selected: isSelected,
+                            selectedColor: const Color(0xFF0F766E),
+                            labelStyle: TextStyle(
+                              color: isSelected ? Colors.white : Colors.black87,
+                              fontWeight: isSelected
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
+                              fontSize: 12,
+                            ),
+                            avatar: Icon(
+                              Icons.location_city_rounded,
+                              size: 14,
+                              color: isSelected ? Colors.white : Colors.black87,
+                            ),
+                            onSelected: (_) => _toggleCityFilter(
+                              city,
+                              allValidPlaces,
+                              LatLng(avgLat, avgLng),
+                            ),
+                          ),
+                        );
+                      }),
                     ],
                   ),
                 ),
               ),
 
-              // Bottom Card when a marker is tapped
+              // Bottom Selected Place Card (if tapped on a marker)
               if (_selectedPlace != null)
                 Positioned(
-                  bottom: 16,
+                  bottom: 74, // Above the days bottom bar
                   left: 16,
                   right: 16,
                   child: Card(
@@ -218,7 +334,7 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(14),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -273,16 +389,36 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                               ),
                             ),
                           ],
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 10),
                           Row(
                             children: [
+                              Expanded(
+                                child: OutlinedButton.icon(
+                                  icon: const Icon(
+                                    Icons.info_outline_rounded,
+                                    size: 16,
+                                  ),
+                                  label: const Text('Ver Detalhes'),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => PlaceDetailScreen(
+                                          place: _selectedPlace!,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                              const SizedBox(width: 8),
                               Expanded(
                                 child: FilledButton.icon(
                                   icon: const Icon(
                                     Icons.navigation_rounded,
                                     size: 16,
                                   ),
-                                  label: const Text('Navigate'),
+                                  label: const Text('Navegar'),
                                   style: FilledButton.styleFrom(
                                     backgroundColor: const Color(0xFF0F766E),
                                   ),
@@ -303,11 +439,70 @@ class _MapRadarScreenState extends ConsumerState<MapRadarScreen> {
                     ),
                   ),
                 ),
+
+              // Bottom Day Selector Bar like mapngo.com (Item 34)
+              Positioned(
+                bottom: 12,
+                left: 12,
+                right: 12,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.95),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.15),
+                        blurRadius: 10,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: days.map((d) {
+                        final isSelected = _selectedDayFilter == d.dayNumber;
+                        final label = d.dayNumber == 0
+                            ? 'Sem Dia'
+                            : 'Dia ${d.dayNumber}';
+                        final placeCount = d.places
+                            .where((p) => p.latitude != 0.0)
+                            .length;
+
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          child: FilterChip(
+                            label: Text('$label ($placeCount)'),
+                            selected: isSelected,
+                            selectedColor: const Color(0xFF0F766E),
+                            labelStyle: TextStyle(
+                              color: isSelected
+                                  ? Colors.white
+                                  : const Color(0xFF1E293B),
+                              fontWeight: isSelected
+                                  ? FontWeight.bold
+                                  : FontWeight.w500,
+                              fontSize: 12,
+                            ),
+                            backgroundColor: const Color(0xFFF1F5F9),
+                            onSelected: (_) =>
+                                _toggleDayFilter(d.dayNumber, allValidPlaces),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ),
+              ),
             ],
           );
         },
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (err, _) => Center(child: Text('Error loading map: $err')),
+        error: (err, _) => Center(child: Text('Erro ao carregar mapa: $err')),
       ),
     );
   }
