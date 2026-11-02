@@ -6,6 +6,8 @@ import '../../itinerary/screens/itinerary_screen.dart';
 import '../../map/screens/map_radar_screen.dart';
 import '../../places/screens/search_places_screen.dart';
 import '../../tips/screens/tips_screen.dart';
+import '../../trips/providers/trips_provider.dart';
+import '../../trips/screens/trip_list_screen.dart';
 import '../../places/providers/shared_link_provider.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -54,6 +56,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final selectedTripId = ref.watch(selectedTripIdProvider);
+
+    // If no trip is selected (or first open), show the TripListScreen (Item 23 & 24)
+    if (selectedTripId == null) {
+      return const TripListScreen();
+    }
+
     return Scaffold(
       body: IndexedStack(index: _currentIndex, children: _screens),
       bottomNavigationBar: BottomNavigationBar(
@@ -61,26 +70,27 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         onTap: (index) => setState(() => _currentIndex = index),
         selectedItemColor: const Color(0xFF0F766E),
         unselectedItemColor: const Color(0xFF94A3B8),
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_month_rounded),
             activeIcon: Icon(Icons.calendar_month),
-            label: 'Itinerary',
+            label: 'Itinerário',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.map_outlined),
             activeIcon: Icon(Icons.map_rounded),
-            label: 'Map Radar',
+            label: 'Mapa',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search_rounded),
             activeIcon: Icon(Icons.manage_search_rounded),
-            label: 'Search',
+            label: 'Buscar',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.lightbulb_outline_rounded),
             activeIcon: Icon(Icons.lightbulb_rounded),
-            label: 'Tips',
+            label: 'Dicas',
           ),
         ],
       ),

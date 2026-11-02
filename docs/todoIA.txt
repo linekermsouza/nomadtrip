@@ -1,0 +1,34 @@
+adicionar no roteiro do after hours magic kingdom e no dia de magic kingdom:
+comprar cinnamon roll gigante e Croissant de Crème Brûlée
+https://www.instagram.com/reels/DaD1YilSr-m/
+
+remover jungle cruise do roteiro do magic kingdom
+
+verificar se o panda express tá no roteiro do dia do city walk, adicionar
+verificar se tá incluído no roteiro pegar o barquinho do city walk pra ir pro hotel italiano, adicionar
+
+pode ter dicas que podem se aplicar de forma geral como cadastrar o cartão internacional no app Disney ou universal. Tem dicas ou checklists que servem mais para um dia no roteiro, e outros de forma geral, aplicar isso.
+
+
+- adicionar opção para deletar todos os lugares do roteiro no dia, selecionar mais de um lugar no dia e poder deletar
+- verificar se os lugares mencionados precisam de reserva, se precisar de reserva indicar no roteiro, caso contrário não precisa indicar
+- onde tiver montanhas russas é bom ter a informação de altura mínima, idade recomendada e nível de adrenalina, se giram bastante, se pode enjoar, vamos ter crianças de 6 e 12 anos no grupo
+- para cada atração do parque se possível incluir, tempo média de fila, duração da atração
+- pra cada dia do roteiro, ter um checklist antes de começar o dia, por exemplo, levar capa de chuva, protetor solar, etc. Talvez no topo da lista, a minha preocupação é ter muita informação pro usuário
+
+
+- remover __ e ** que veio do .md
+- adicionar as dicas de ./docs/dicas_de_viagem.txt
+- tem o roteiro dos parques em ./docs/roteiro parques.txt , teria que ver uma forma visual de mostrar esse roteiro do parque que passe as mesmas informações que tão nesse arquivo, a área, detalhes de montanhas russas, alternaticas, etc, tem que pensar numa forma de ficar genérico sem complicar muito, para que possa ser usado para outras viagens, talvez ter opção de tipo de local não sei, pense na melhor forma de usabilidade, navegabilidade.
+- quero que o app abra pela primeira vez vazio, a primeira tela tem que ter alguma frase como "Qual o roteiro da sua próxima viagem?", algo do tipo. Opção de adicionar/editar/deletar/exportar o roteiro, data de início e data final, nome, etc. Duas opções de exportar (em .md de forma organizada, e um formato .ntrip que é um json com as regras que o app nomadtrip vai entender na hora de importar). Opção de importar roteiro, ao importar já vem dados pré-prenchidos e usuário vai poder alterar nome, datas, etc. Ao alterar roteiro manter os locais para os dias, se diminuir a quantidade de dias dá uma mensagem de erro informando que tem locais cadastrados em todos os dias, que é pra remover os locais de um dia antes de diminuir o dia, o mesmo para mais de um dia.
+- então provavelmente vai ter uma lista de roteiros, e ao selecionar uma viagem, vai para o modo que vemos hoje com os dias, se fechar e abrir o app permanece nessa visão de dias com a viagem atual selecionada, tem que ter uma opção, talvez na toolbar ou menu que apareça opção tipo Trocar de Roteiro, aí volta para a tela de lista de roteiro para o usuário selecionar outro roteiro.
+- como já tem um roteiro que você tá montando pra mim, quero que gere apenas o .ntrip em .docs/ para que eu mesmo importe.
+- não deveria ter uma opção de editar informações do dia? tipo em que cidade vai acordar e dormir no dia? talvez só a informação de onde vai dormir seja suficiente. Editar Título do dia, checklist do dia, etc. 
+- o Map Radar tá fixo as cidades Orlando, Miami e keywest? deveria ser a partir das cidades citadas no roteiro do usuário, pelo menos as principais, teria que ver uma forma de selecionar caso o usuário tenha muitas cidades citadas
+- ao listar os locais do roteiro exibir a imagem do local no card, procurar em algum canto pra baixar, que não deixe lento o app, e salve a imagem em cache, não quero nenhum engasgo ao rolar a lista de locais.
+- ainda gostaria que quando clicasse num lugar seja no itinerário ou search, aparece uma tela full screen, mostrando mais informações e até uma imagem do local, aí salva a imagem em cache para futuros acessos, essa imagem não precisa ser exportada. A opção de editar local pode ser uma versão full screen com foco na edição/exclusão. na edição pode ter uma opção de trocar imagem aí vai em algum canto pegar outra imagem para aquele local.
+- remover label de quantos visitou no dia
+- área de lodging tonight deve rolar junto com a lista
+- botão Add Itinerary Stop tá muito grande, pode ser só o ícone mesmo no botão, para o search também o mesmo ícone
+- qualquer alteração no roteiro que eu pedi, ajustar o impacto no restante do roteiro do dia e no roteiro geral se necessário
+- no mapa, mostrar abaixo que nem no mapngo.com, os dias, que ao selecionar um dia, mover para a localização no mapa e mostrar somente o dia selecionado, se clicar no dia selecionado novamente "desmarca" ele e volta a exibir todos os lugares. Só pode usar esse filtro dos dias ou o filtro da cidade, e não os dois ao mesmo tempo.

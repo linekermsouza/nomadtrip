@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/models/itinerary_place.dart';
 import '../../../core/models/trip_day.dart';
-import '../../itinerary/providers/itinerary_provider.dart';
 import '../../../core/services/navigation_launcher.dart';
-import '../../itinerary/widgets/place_edit_dialog.dart';
+import '../../itinerary/providers/itinerary_provider.dart';
+import '../../itinerary/screens/place_detail_screen.dart';
+import '../../itinerary/screens/place_edit_screen.dart';
 import '../providers/search_provider.dart';
 
 class SearchPlacesScreen extends ConsumerStatefulWidget {
@@ -39,7 +40,7 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
     final days = ref.watch(itineraryProvider).value ?? const [];
 
     return Scaffold(
-      appBar: AppBar(title: const Text('🔍 Search Places')),
+      appBar: AppBar(title: const Text('🔍 Buscar Locais')),
       body: Column(
         children: [
           // Search Input Bar
@@ -49,7 +50,7 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
               controller: _searchController,
               onChanged: _onSearchChanged,
               decoration: InputDecoration(
-                hintText: 'Search place, outlet, restaurant, park...',
+                hintText: 'Pesquise parque, restaurante, outlet, atração...',
                 prefixIcon: const Icon(
                   Icons.search_rounded,
                   color: Color(0xFF0F766E),
@@ -109,7 +110,7 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
-                              'Found ${results.length} matching stop(s) already in itinerary!',
+                              'Encontrado(s) ${results.length} local(is) no roteiro!',
                               style: const TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
@@ -120,39 +121,38 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
                         ],
                       ),
                     );
-                  } else {
-                    return Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFFEF2F2),
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: const Color(0xFFFECACA)),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.info_outline_rounded,
-                            color: Color(0xFFDC2626),
-                            size: 18,
-                          ),
-                          const SizedBox(width: 8),
-                          const Expanded(
-                            child: Text(
-                              'Not in itinerary yet. You can add it using the button below!',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xFF991B1B),
-                              ),
+                  }
+                  return Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFEF3C7),
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: const Color(0xFFFCD34D)),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.info_outline_rounded,
+                          color: Color(0xFFD97706),
+                          size: 18,
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            'Nenhum local no roteiro com "$query". Você pode adicioná-lo!',
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF92400E),
                             ),
                           ),
-                        ],
-                      ),
-                    );
-                  }
+                        ),
+                      ],
+                    ),
+                  );
                 },
                 loading: () => const SizedBox.shrink(),
-                error: (err, stack) => const SizedBox.shrink(),
+                error: (error, stackTrace) => const SizedBox.shrink(),
               ),
             ),
           ],
@@ -167,18 +167,18 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          Icons.search_off_rounded,
-                          size: 48,
+                          Icons.travel_explore_rounded,
+                          size: 54,
                           color: Colors.grey[400],
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          query.isEmpty
-                              ? 'Type to search stops in the itinerary'
-                              : 'No places found for "$query"',
+                          query.trim().isEmpty
+                              ? 'Nenhum local cadastrado no roteiro'
+                              : 'Nenhum resultado para "$query"',
                           style: TextStyle(
+                            fontSize: 15,
                             color: Colors.grey[600],
-                            fontSize: 14,
                           ),
                         ),
                       ],
@@ -187,27 +187,41 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
                 }
 
                 return ListView.builder(
-                  padding: const EdgeInsets.only(top: 8, bottom: 20),
+                  padding: const EdgeInsets.only(bottom: 80, top: 4),
                   itemCount: results.length,
                   itemBuilder: (context, index) {
                     final place = results[index];
                     return Card(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 5,
+                      ),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                        side: const BorderSide(color: Color(0xFFE2E8F0)),
+                      ),
                       child: ListTile(
                         contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 8,
+                          horizontal: 14,
+                          vertical: 6,
                         ),
+                        // Item 29: Full-screen place detail on tap
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => PlaceDetailScreen(place: place),
+                            ),
+                          );
+                        },
                         leading: CircleAvatar(
-                          backgroundColor: place.isVisited
-                              ? const Color(0xFFDCFCE7)
-                              : const Color(0xFFF1F5F9),
-                          child: Icon(
-                            place.isVisited
-                                ? Icons.check_rounded
-                                : Icons.place_rounded,
-                            color: place.isVisited
-                                ? const Color(0xFF16A34A)
-                                : const Color(0xFF0F766E),
+                          backgroundColor: const Color(
+                            0xFF0F766E,
+                          ).withValues(alpha: 0.1),
+                          child: const Icon(
+                            Icons.place_rounded,
+                            color: Color(0xFF0F766E),
                           ),
                         ),
                         title: Text(
@@ -220,23 +234,22 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(height: 4),
+                            const SizedBox(height: 2),
                             Text(
-                              '📅 ${formatDayLabel(place.dayNumber, days)} • ⏰ ${place.time}',
+                              '${formatDayLabel(place.dayNumber, days)} • ${place.time}',
                               style: const TextStyle(
                                 fontSize: 12,
-                                fontWeight: FontWeight.w600,
                                 color: Color(0xFF0F766E),
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                            if (place.city.isNotEmpty) ...[
+                            if (place.rawDescription.isNotEmpty) ...[
                               const SizedBox(height: 2),
                               Text(
-                                '📍 ${place.city}',
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  color: Colors.grey[600],
-                                ),
+                                place.rawDescription,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(fontSize: 12),
                               ),
                             ],
                           ],
@@ -249,7 +262,7 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
                                 Icons.navigation_rounded,
                                 color: Color(0xFF0F766E),
                               ),
-                              tooltip: 'Navigate',
+                              tooltip: 'Navegar',
                               onPressed: () {
                                 NavigationLauncher.showNavigationSheet(
                                   context,
@@ -261,17 +274,14 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
                             ),
                             IconButton(
                               icon: const Icon(Icons.edit_note_rounded),
-                              tooltip: 'Edit',
+                              tooltip: 'Editar',
                               onPressed: () {
-                                showModalBottomSheet(
-                                  context: context,
-                                  isScrollControlled: true,
-                                  shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(20),
-                                    ),
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) =>
+                                        PlaceEditScreen(place: place),
                                   ),
-                                  builder: (_) => PlaceEditDialog(place: place),
                                 );
                               },
                             ),
@@ -283,16 +293,17 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
                 );
               },
               loading: () => const Center(child: CircularProgressIndicator()),
-              error: (err, stack) => Center(child: Text('Error: $err')),
+              error: (err, stack) => Center(child: Text('Erro: $err')),
             ),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      // Item 32: Compact icon-only FAB (same icon as itinerary)
+      floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFF0F766E),
         foregroundColor: Colors.white,
-        icon: const Icon(Icons.add_rounded),
-        label: const Text('Add Custom Stop'),
+        tooltip: 'Adicionar Local',
+        child: const Icon(Icons.add_location_alt_rounded),
         onPressed: () {
           final newPlace = ItineraryPlace(
             dayNumber: 1,
@@ -306,13 +317,9 @@ class _SearchPlacesScreenState extends ConsumerState<SearchPlacesScreen> {
             parking: 'Unknown',
           );
 
-          showModalBottomSheet(
-            context: context,
-            isScrollControlled: true,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-            ),
-            builder: (_) => PlaceEditDialog(place: newPlace),
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => PlaceEditScreen(place: newPlace)),
           );
         },
       ),
