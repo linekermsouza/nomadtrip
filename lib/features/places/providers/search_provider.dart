@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/models/itinerary_place.dart';
+import '../../trips/providers/trips_provider.dart';
 
 class SearchQueryNotifier extends Notifier<String> {
   @override
@@ -15,8 +16,9 @@ final searchQueryProvider = NotifierProvider<SearchQueryNotifier, String>(
 
 final searchResultsProvider = FutureProvider<List<ItineraryPlace>>((ref) async {
   final query = ref.watch(searchQueryProvider);
+  final tripId = ref.watch(selectedTripIdProvider);
   final db = AppDatabase.instance;
-  return await db.searchPlaces(query);
+  return await db.searchPlaces(query, tripId: tripId);
 });
 
 // Check whether a place with a similar name already exists in the itinerary
