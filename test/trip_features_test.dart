@@ -234,7 +234,8 @@ void main() {
       final places = content['places'] as List;
       final tips = content['tips'] as List;
 
-      expect(days.length, 20);
+      expect(days.length, 21);
+      expect(days.where((d) => d['day_number'] > 0).length, 20);
       expect(places.length, greaterThan(100));
       expect(tips.length, greaterThanOrEqualTo(16));
 
