@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/models/itinerary_place.dart';
+import '../../../core/models/checklist_item.dart';
 import '../../../core/services/image_cache_service.dart';
 import '../providers/itinerary_provider.dart';
 
@@ -36,6 +37,9 @@ class _PlaceEditScreenState extends ConsumerState<PlaceEditScreen> {
   late String _adrenalineLevel;
   late bool _hasDizzinessWarning;
   late List<String> _links;
+  late List<ChecklistItem> _checklist;
+  final TextEditingController _checklistItemController =
+      TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -71,6 +75,7 @@ class _PlaceEditScreenState extends ConsumerState<PlaceEditScreen> {
     _adrenalineLevel = p.adrenalineLevel;
     _hasDizzinessWarning = p.hasDizzinessWarning;
     _links = List.from(p.links);
+    _checklist = List.from(p.checklist);
   }
 
   @override
@@ -87,6 +92,7 @@ class _PlaceEditScreenState extends ConsumerState<PlaceEditScreen> {
     _avgWaitController.dispose();
     _durationController.dispose();
     _linkInputController.dispose();
+    _checklistItemController.dispose();
     super.dispose();
   }
 
@@ -96,6 +102,22 @@ class _PlaceEditScreenState extends ConsumerState<PlaceEditScreen> {
       setState(() {
         _links.add(text);
         _linkInputController.clear();
+      });
+    }
+  }
+
+  void _addChecklistItem() {
+    final text = _checklistItemController.text.trim();
+    if (text.isNotEmpty) {
+      setState(() {
+        _checklist.add(
+          ChecklistItem(
+            id: DateTime.now().millisecondsSinceEpoch.toString(),
+            text: text,
+            isCompleted: false,
+          ),
+        );
+        _checklistItemController.clear();
       });
     }
   }
@@ -210,6 +232,7 @@ class _PlaceEditScreenState extends ConsumerState<PlaceEditScreen> {
       avgWaitMinutes: int.tryParse(_avgWaitController.text.trim()) ?? 0,
       durationMinutes: int.tryParse(_durationController.text.trim()) ?? 0,
       links: _links,
+      checklist: _checklist,
     );
 
     if (widget.place.id == null) {
@@ -645,6 +668,85 @@ class _PlaceEditScreenState extends ConsumerState<PlaceEditScreen> {
               onChanged: (val) => setState(() => _isAlternative = val),
             ),
             const SizedBox(height: 12),
+
+            // Checklist Section
+            const Text(
+              'Checklist do Local',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _checklistItemController,
+                    decoration: const InputDecoration(
+                      hintText: 'Adicionar item ao checklist...',
+                      border: OutlineInputBorder(),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 10,
+                      ),
+                    ),
+                    onSubmitted: (_) => _addChecklistItem(),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                IconButton.filled(
+                  icon: const Icon(Icons.add),
+                  onPressed: _addChecklistItem,
+                ),
+              ],
+            ),
+            if (_checklist.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: _checklist.length,
+                itemBuilder: (context, index) {
+                  final item = _checklist[index];
+                  return ListTile(
+                    dense: true,
+                    visualDensity: VisualDensity.compact,
+                    contentPadding: EdgeInsets.zero,
+                    leading: Checkbox(
+                      value: item.isCompleted,
+                      activeColor: const Color(0xFF0F766E),
+                      onChanged: (val) {
+                        setState(() {
+                          _checklist[index] = item.copyWith(
+                            isCompleted: val ?? false,
+                          );
+                        });
+                      },
+                    ),
+                    title: Text(
+                      item.text,
+                      style: TextStyle(
+                        fontSize: 13,
+                        decoration: item.isCompleted
+                            ? TextDecoration.lineThrough
+                            : null,
+                        color: item.isCompleted
+                            ? Colors.grey
+                            : const Color(0xFF0F172A),
+                      ),
+                    ),
+                    trailing: IconButton(
+                      icon: const Icon(
+                        Icons.close,
+                        size: 16,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () =>
+                          setState(() => _checklist.removeAt(index)),
+                    ),
+                  );
+                },
+              ),
+            ],
+            const SizedBox(height: 16),
 
             // Notes
             TextFormField(

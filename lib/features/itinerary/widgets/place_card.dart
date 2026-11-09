@@ -380,6 +380,13 @@ class PlaceCard extends ConsumerWidget {
                       label: 'Alternativa',
                       color: Color(0xFFB45309),
                     ),
+                  if (place.checklist.isNotEmpty)
+                    _MiniChip(
+                      icon: Icons.checklist_rounded,
+                      label:
+                          '${place.checklist.where((c) => c.isCompleted).length}/${place.checklist.length}',
+                      color: const Color(0xFF0F766E),
+                    ),
                 ],
               ),
 

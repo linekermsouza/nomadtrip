@@ -6,6 +6,7 @@ import '../../../core/services/location_service.dart';
 import '../../../core/services/navigation_launcher.dart';
 import '../providers/itinerary_provider.dart';
 import 'place_edit_screen.dart';
+import '../widgets/place_checklist_widget.dart';
 
 class PlaceDetailScreen extends ConsumerWidget {
   final ItineraryPlace place;
@@ -388,6 +389,10 @@ class PlaceDetailScreen extends ConsumerWidget {
                     ),
                     const SizedBox(height: 20),
                   ],
+
+                  // Place Checklist
+                  PlaceChecklistWidget(place: currentPlace),
+                  const SizedBox(height: 16),
 
                   // Description
                   if (currentPlace.rawDescription.isNotEmpty) ...[

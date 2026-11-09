@@ -145,6 +145,90 @@ class ItineraryNotifier extends AsyncNotifier<List<TripDay>> {
     await db.updateDayChecklist(tripId, dayNumber, updated);
     await reload();
   }
+
+  Future<void> togglePlaceChecklistItem(int placeId, String itemId) async {
+    final days = state.value ?? [];
+    ItineraryPlace? targetPlace;
+    for (final day in days) {
+      for (final p in day.places) {
+        if (p.id == placeId) {
+          targetPlace = p;
+          break;
+        }
+      }
+      if (targetPlace != null) break;
+    }
+    if (targetPlace == null) {
+      final db = ref.read(databaseProvider);
+      targetPlace = await db.getPlaceById(placeId);
+    }
+    if (targetPlace == null) return;
+
+    final updatedChecklist = targetPlace.checklist.map((item) {
+      if (item.id == itemId) {
+        return item.copyWith(isCompleted: !item.isCompleted);
+      }
+      return item;
+    }).toList();
+
+    final db = ref.read(databaseProvider);
+    await db.updatePlaceChecklist(placeId, updatedChecklist);
+    await reload();
+  }
+
+  Future<void> addPlaceChecklistItem(int placeId, String text) async {
+    if (text.trim().isEmpty) return;
+    final days = state.value ?? [];
+    ItineraryPlace? targetPlace;
+    for (final day in days) {
+      for (final p in day.places) {
+        if (p.id == placeId) {
+          targetPlace = p;
+          break;
+        }
+      }
+      if (targetPlace != null) break;
+    }
+    if (targetPlace == null) {
+      final db = ref.read(databaseProvider);
+      targetPlace = await db.getPlaceById(placeId);
+    }
+    if (targetPlace == null) return;
+
+    final newItem = ChecklistItem(
+      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      text: text.trim(),
+      isCompleted: false,
+    );
+    final updated = [...targetPlace.checklist, newItem];
+    final db = ref.read(databaseProvider);
+    await db.updatePlaceChecklist(placeId, updated);
+    await reload();
+  }
+
+  Future<void> removePlaceChecklistItem(int placeId, String itemId) async {
+    final days = state.value ?? [];
+    ItineraryPlace? targetPlace;
+    for (final day in days) {
+      for (final p in day.places) {
+        if (p.id == placeId) {
+          targetPlace = p;
+          break;
+        }
+      }
+      if (targetPlace != null) break;
+    }
+    if (targetPlace == null) {
+      final db = ref.read(databaseProvider);
+      targetPlace = await db.getPlaceById(placeId);
+    }
+    if (targetPlace == null) return;
+
+    final updated = targetPlace.checklist.where((i) => i.id != itemId).toList();
+    final db = ref.read(databaseProvider);
+    await db.updatePlaceChecklist(placeId, updated);
+    await reload();
+  }
 }
 
 final itineraryProvider =

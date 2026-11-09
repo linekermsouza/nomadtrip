@@ -45,7 +45,7 @@ class AppDatabase {
 
     return await openDatabase(
       path,
-      version: 3,
+      version: 4,
       onCreate: _onCreate,
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -64,8 +64,19 @@ class AppDatabase {
         if (oldVersion < 3) {
           await _upgradeToVersion3(db);
         }
+        if (oldVersion < 4) {
+          await _upgradeToVersion4(db);
+        }
       },
     );
+  }
+
+  Future<void> _upgradeToVersion4(Database db) async {
+    try {
+      await db.execute(
+        "ALTER TABLE places ADD COLUMN checklist TEXT DEFAULT '[]'",
+      );
+    } catch (_) {}
   }
 
   Future<void> _upgradeToVersion3(Database db) async {
@@ -107,6 +118,7 @@ class AppDatabase {
       'has_dizziness_warning INTEGER DEFAULT 0',
       'avg_wait_minutes INTEGER DEFAULT 0',
       'duration_minutes INTEGER DEFAULT 0',
+      "checklist TEXT DEFAULT '[]'",
     ];
 
     for (final col in placeColumns) {
@@ -204,7 +216,8 @@ class AppDatabase {
         adrenaline_level TEXT DEFAULT '',
         has_dizziness_warning INTEGER DEFAULT 0,
         avg_wait_minutes INTEGER DEFAULT 0,
-        duration_minutes INTEGER DEFAULT 0
+        duration_minutes INTEGER DEFAULT 0,
+        checklist TEXT DEFAULT '[]'
       )
     ''');
 
@@ -575,6 +588,30 @@ class AppDatabase {
     return maps.map((m) => ItineraryPlace.fromMap(m)).toList();
   }
 
+  Future<ItineraryPlace?> getPlaceById(int placeId) async {
+    final db = await database;
+    final maps = await db.query(
+      'places',
+      where: 'id = ?',
+      whereArgs: [placeId],
+    );
+    if (maps.isEmpty) return null;
+    return ItineraryPlace.fromMap(maps.first);
+  }
+
+  Future<void> updatePlaceChecklist(
+    int placeId,
+    List<ChecklistItem> checklist,
+  ) async {
+    final db = await database;
+    await db.update(
+      'places',
+      {'checklist': jsonEncode(checklist.map((c) => c.toMap()).toList())},
+      where: 'id = ?',
+      whereArgs: [placeId],
+    );
+  }
+
   Future<int> insertPlace(ItineraryPlace place) async {
     final db = await database;
     final effectiveTripId = place.tripId > 0
@@ -815,6 +852,14 @@ class AppDatabase {
             }
             sb.writeln('  - *Atração:* ${details.join(' | ')}');
           }
+          if (p.checklist.isNotEmpty) {
+            sb.writeln('  - *Checklist:*');
+            for (final item in p.checklist) {
+              sb.writeln(
+                '    - [${item.isCompleted ? 'x' : ' '}] ${item.text}',
+              );
+            }
+          }
           if (p.notes.isNotEmpty) {
             sb.writeln('  - *Notas:* ${p.notes}');
           }
@@ -976,6 +1021,9 @@ class AppDatabase {
                   source['avg_wait_minutes'] ?? source['avgWaitMinutes'] ?? 0,
               'duration_minutes':
                   source['duration_minutes'] ?? source['durationMinutes'] ?? 0,
+              'checklist': source['checklist'] is String
+                  ? source['checklist']
+                  : jsonEncode(source['checklist'] ?? []),
             });
           }
         }
@@ -1010,6 +1058,13 @@ class AppDatabase {
           (copy['notes'] ?? '') as String,
         );
         copy['zone'] = cleanMarkdownDecorations((copy['zone'] ?? '') as String);
+        if (copy['checklist'] != null) {
+          copy['checklist'] = copy['checklist'] is String
+              ? copy['checklist']
+              : jsonEncode(copy['checklist']);
+        } else {
+          copy['checklist'] = '[]';
+        }
         await txn.insert('places', copy);
       }
 

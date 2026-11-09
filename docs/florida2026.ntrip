@@ -222,7 +222,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 1,
@@ -247,7 +248,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 1,
@@ -272,7 +274,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 1,
@@ -297,7 +300,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 1,
@@ -322,7 +326,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 45
+      "duration_minutes": 45,
+      "checklist": "[]"
     },
     {
       "day_number": 1,
@@ -347,7 +352,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[{\"id\":\"1\",\"text\":\"2 caixas de água (35 ou 40 unidades)\",\"isCompleted\":false},{\"id\":\"2\",\"text\":\"1 galão de água para deixar na casa\",\"isCompleted\":false},{\"id\":\"3\",\"text\":\"Suco de laranja (1 ou 2 garrafas)\",\"isCompleted\":false},{\"id\":\"4\",\"text\":\"Leite (2 galões ou 2 embalagens grandes)\",\"isCompleted\":false},{\"id\":\"5\",\"text\":\"Coca-Cola / refrigerante para a casa\",\"isCompleted\":false},{\"id\":\"6\",\"text\":\"Gatorade ou Powerade (6 a 8 unidades)\",\"isCompleted\":false},{\"id\":\"7\",\"text\":\"Batata Pringles\",\"isCompleted\":false},{\"id\":\"8\",\"text\":\"Doritos\",\"isCompleted\":false},{\"id\":\"9\",\"text\":\"Goldfish para as crianças\",\"isCompleted\":false},{\"id\":\"10\",\"text\":\"Cookies Oreo\",\"isCompleted\":false},{\"id\":\"11\",\"text\":\"Barrinhas de cereal\",\"isCompleted\":false},{\"id\":\"12\",\"text\":\"Mix de castanhas/amendoins\",\"isCompleted\":false},{\"id\":\"13\",\"text\":\"Bananas\",\"isCompleted\":false},{\"id\":\"14\",\"text\":\"Maçãs\",\"isCompleted\":false},{\"id\":\"15\",\"text\":\"Pacote de frutas cortadas (se encontrar)\",\"isCompleted\":false},{\"id\":\"16\",\"text\":\"Pizza congelada\",\"isCompleted\":false},{\"id\":\"17\",\"text\":\"Mac and Cheese (é bom?)\",\"isCompleted\":false},{\"id\":\"18\",\"text\":\"Pão de forma\",\"isCompleted\":false},{\"id\":\"19\",\"text\":\"Manteiga\",\"isCompleted\":false},{\"id\":\"20\",\"text\":\"Cream Cheese Philadelphia\",\"isCompleted\":false},{\"id\":\"21\",\"text\":\"Presunto\",\"isCompleted\":false},{\"id\":\"22\",\"text\":\"Queijo fatiado\",\"isCompleted\":false},{\"id\":\"23\",\"text\":\"Ovos (18 unidades)\",\"isCompleted\":false},{\"id\":\"24\",\"text\":\"Bacon\",\"isCompleted\":false},{\"id\":\"25\",\"text\":\"Iogurte\",\"isCompleted\":false},{\"id\":\"26\",\"text\":\"Cereal (Cheerios, Froot Loops, etc.)\",\"isCompleted\":false}]"
     },
     {
       "day_number": 1,
@@ -372,7 +378,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 1,
@@ -397,7 +404,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 2,
@@ -422,7 +430,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 2,
@@ -447,7 +456,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 2,
@@ -472,7 +482,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 2,
@@ -497,7 +508,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 45
+      "duration_minutes": 45,
+      "checklist": "[]"
     },
     {
       "day_number": 2,
@@ -522,7 +534,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -547,7 +560,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -572,7 +586,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 2
+      "duration_minutes": 2,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -597,7 +612,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 2
+      "duration_minutes": 2,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -622,7 +638,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 50,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -647,7 +664,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -672,7 +690,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -697,7 +716,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -722,7 +742,8 @@
       "adrenaline_level": "Extremo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -747,7 +768,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -772,7 +794,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 35,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -797,7 +820,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 15,
-      "duration_minutes": 2
+      "duration_minutes": 2,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -822,7 +846,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -847,7 +872,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -872,7 +898,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 25,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -897,7 +924,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 35,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -922,7 +950,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 3,
@@ -947,7 +976,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 4,
@@ -972,7 +1002,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 4,
@@ -997,7 +1028,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 4,
@@ -1022,7 +1054,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 4,
@@ -1047,7 +1080,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1072,7 +1106,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1097,7 +1132,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 45,
-      "duration_minutes": 4
+      "duration_minutes": 4,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1122,7 +1158,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 1,
       "avg_wait_minutes": 35,
-      "duration_minutes": 4
+      "duration_minutes": 4,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1147,7 +1184,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1172,7 +1210,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 15,
-      "duration_minutes": 2
+      "duration_minutes": 2,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1197,7 +1236,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1222,7 +1262,8 @@
       "adrenaline_level": "Extremo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 35,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1247,7 +1288,8 @@
       "adrenaline_level": "Extremo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 2
+      "duration_minutes": 2,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1272,7 +1314,8 @@
       "adrenaline_level": "Extremo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 25,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1297,7 +1340,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1322,7 +1366,8 @@
       "adrenaline_level": "Extremo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 45,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1347,7 +1392,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1372,7 +1418,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 5,
@@ -1397,7 +1444,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 6,
@@ -1422,7 +1470,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 6,
@@ -1447,7 +1496,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 6,
@@ -1472,7 +1522,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 15,
-      "duration_minutes": 30
+      "duration_minutes": 30,
+      "checklist": "[]"
     },
     {
       "day_number": 6,
@@ -1497,7 +1548,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 6,
@@ -1522,7 +1574,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1547,7 +1600,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1572,7 +1626,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1597,7 +1652,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 20,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1622,7 +1678,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 50,
-      "duration_minutes": 11
+      "duration_minutes": 11,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1647,7 +1704,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 45,
-      "duration_minutes": 4
+      "duration_minutes": 4,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1672,7 +1730,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 9
+      "duration_minutes": 9,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1697,7 +1756,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1722,7 +1782,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 35,
-      "duration_minutes": 10
+      "duration_minutes": 10,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1747,7 +1808,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1772,7 +1834,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 60,
-      "duration_minutes": 2
+      "duration_minutes": 2,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1797,7 +1860,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 1,
       "avg_wait_minutes": 45,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1822,7 +1886,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1847,7 +1912,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 70,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1872,7 +1938,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 40,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1897,7 +1964,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 15,
-      "duration_minutes": 6
+      "duration_minutes": 6,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1922,7 +1990,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 7,
@@ -1947,7 +2016,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -1972,7 +2042,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -1997,7 +2068,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2022,7 +2094,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 40,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2047,7 +2120,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 10,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2072,7 +2146,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 10
+      "duration_minutes": 10,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2097,7 +2172,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2122,7 +2198,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 35,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2147,7 +2224,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 25,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2172,7 +2250,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 25,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2197,7 +2276,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2222,7 +2302,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2247,7 +2328,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2272,7 +2354,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 8,
@@ -2297,7 +2380,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 9,
@@ -2322,7 +2406,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 9,
@@ -2347,7 +2432,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 9,
@@ -2372,7 +2458,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 9,
@@ -2397,7 +2484,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2422,7 +2510,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2447,7 +2536,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 40,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2472,7 +2562,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 55,
-      "duration_minutes": 4
+      "duration_minutes": 4,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2497,7 +2588,8 @@
       "adrenaline_level": "Extremo",
       "has_dizziness_warning": 1,
       "avg_wait_minutes": 60,
-      "duration_minutes": 2
+      "duration_minutes": 2,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2522,7 +2614,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2547,7 +2640,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2572,7 +2666,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 40,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2597,7 +2692,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2622,7 +2718,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 40,
-      "duration_minutes": 6
+      "duration_minutes": 6,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2647,7 +2744,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 70,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2672,7 +2770,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 45,
-      "duration_minutes": 18
+      "duration_minutes": 18,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2697,7 +2796,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 1,
       "avg_wait_minutes": 30,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2722,7 +2822,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 10,
@@ -2747,7 +2848,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 11,
@@ -2772,7 +2874,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 11,
@@ -2797,7 +2900,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 11,
@@ -2822,7 +2926,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 11,
@@ -2847,7 +2952,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 12,
@@ -2872,7 +2978,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 12,
@@ -2897,7 +3004,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 12,
@@ -2922,7 +3030,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 13,
@@ -2947,7 +3056,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 13,
@@ -2972,7 +3082,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 13,
@@ -2997,7 +3108,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3022,7 +3134,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3047,7 +3160,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 35,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3072,7 +3186,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 25,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3097,7 +3212,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 35,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3122,7 +3238,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3147,7 +3264,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3172,7 +3290,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3197,7 +3316,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3222,7 +3342,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 45,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3247,7 +3368,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3272,7 +3394,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 1,
       "avg_wait_minutes": 25,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3297,7 +3420,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 1,
       "avg_wait_minutes": 30,
-      "duration_minutes": 4
+      "duration_minutes": 4,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3322,7 +3446,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 20,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3347,7 +3472,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3372,7 +3498,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 25,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 14,
@@ -3397,7 +3524,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3422,7 +3550,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3447,7 +3576,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3472,7 +3602,8 @@
       "adrenaline_level": "Baixo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 20,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3497,7 +3628,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3522,7 +3654,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 55,
-      "duration_minutes": 4
+      "duration_minutes": 4,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3547,7 +3680,8 @@
       "adrenaline_level": "Extremo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 50,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3572,7 +3706,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3597,7 +3732,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3622,7 +3758,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 1,
       "avg_wait_minutes": 35,
-      "duration_minutes": 4
+      "duration_minutes": 4,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3647,7 +3784,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3672,7 +3810,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 25,
-      "duration_minutes": 6
+      "duration_minutes": 6,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3697,7 +3836,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3722,7 +3862,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 6
+      "duration_minutes": 6,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3747,7 +3888,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 30,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3772,7 +3914,8 @@
       "adrenaline_level": "Extremo",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 45,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 15,
@@ -3797,7 +3940,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -3822,7 +3966,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -3847,7 +3992,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 90,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -3872,7 +4018,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 60,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -3897,7 +4044,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -3922,7 +4070,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -3947,7 +4096,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 90,
-      "duration_minutes": 5
+      "duration_minutes": 5,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -3972,7 +4122,8 @@
       "adrenaline_level": "Médio",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 45,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -3997,7 +4148,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -4022,7 +4174,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 60,
-      "duration_minutes": 4
+      "duration_minutes": 4,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -4047,7 +4200,8 @@
       "adrenaline_level": "Alto",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 50,
-      "duration_minutes": 3
+      "duration_minutes": 3,
+      "checklist": "[]"
     },
     {
       "day_number": 16,
@@ -4072,7 +4226,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 17,
@@ -4097,7 +4252,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 17,
@@ -4122,7 +4278,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 17,
@@ -4147,7 +4304,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 17,
@@ -4172,7 +4330,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 17,
@@ -4197,7 +4356,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 18,
@@ -4222,7 +4382,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 18,
@@ -4247,7 +4408,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 18,
@@ -4272,7 +4434,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 18,
@@ -4297,7 +4460,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 60
+      "duration_minutes": 60,
+      "checklist": "[]"
     },
     {
       "day_number": 18,
@@ -4322,7 +4486,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 19,
@@ -4347,7 +4512,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 19,
@@ -4372,7 +4538,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 19,
@@ -4397,7 +4564,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 19,
@@ -4422,7 +4590,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 19,
@@ -4447,7 +4616,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 19,
@@ -4472,7 +4642,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 19,
@@ -4497,7 +4668,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 19,
@@ -4522,7 +4694,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 20,
@@ -4547,7 +4720,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 20,
@@ -4572,7 +4746,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 20,
@@ -4597,7 +4772,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     },
     {
       "day_number": 20,
@@ -4622,7 +4798,8 @@
       "adrenaline_level": "",
       "has_dizziness_warning": 0,
       "avg_wait_minutes": 0,
-      "duration_minutes": 0
+      "duration_minutes": 0,
+      "checklist": "[]"
     }
   ],
   "tips": [

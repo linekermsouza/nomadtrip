@@ -68,7 +68,7 @@ void main() {
             CREATE TABLE trips (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, start_date TEXT, end_date TEXT, created_at TEXT)
           ''');
             await db.execute('''
-            CREATE TABLE places (id INTEGER PRIMARY KEY AUTOINCREMENT, trip_id INTEGER, day_number INTEGER, name TEXT, time TEXT, raw_description TEXT, category TEXT, city TEXT, latitude REAL, longitude REAL, parking TEXT, parking_cost INTEGER, is_visited INTEGER, visited_at TEXT, requires_reservation INTEGER, notes TEXT, links TEXT, is_alternative INTEGER, image_url TEXT, zone TEXT, min_height_cm INTEGER, recommended_age TEXT, adrenaline_level TEXT, has_dizziness_warning INTEGER, avg_wait_minutes INTEGER, duration_minutes INTEGER)
+            CREATE TABLE places (id INTEGER PRIMARY KEY AUTOINCREMENT, trip_id INTEGER, day_number INTEGER, name TEXT, time TEXT, raw_description TEXT, category TEXT, city TEXT, latitude REAL, longitude REAL, parking TEXT, parking_cost INTEGER, is_visited INTEGER, visited_at TEXT, requires_reservation INTEGER, notes TEXT, links TEXT, is_alternative INTEGER, image_url TEXT, zone TEXT, min_height_cm INTEGER, recommended_age TEXT, adrenaline_level TEXT, has_dizziness_warning INTEGER, avg_wait_minutes INTEGER, duration_minutes INTEGER, checklist TEXT DEFAULT '[]')
           ''');
           },
         );

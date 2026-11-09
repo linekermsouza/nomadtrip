@@ -30,6 +30,7 @@ class ItineraryPlace {
   final bool hasDizzinessWarning; // se gira bastante ou simulador com enjoo
   final int avgWaitMinutes; // average wait time in minutes
   final int durationMinutes; // duration in minutes
+  final List<ChecklistItem> checklist;
 
   const ItineraryPlace({
     this.id,
@@ -58,6 +59,7 @@ class ItineraryPlace {
     this.hasDizzinessWarning = false,
     this.avgWaitMinutes = 0,
     this.durationMinutes = 0,
+    this.checklist = const [],
   });
 
   Map<String, dynamic> toMap() {
@@ -88,6 +90,7 @@ class ItineraryPlace {
       'has_dizziness_warning': hasDizzinessWarning ? 1 : 0,
       'avg_wait_minutes': avgWaitMinutes,
       'duration_minutes': durationMinutes,
+      'checklist': jsonEncode(checklist.map((c) => c.toMap()).toList()),
     };
   }
 
@@ -100,6 +103,23 @@ class ItineraryPlace {
             : map['links'];
         if (decoded is List) {
           parsedLinks = decoded.map((e) => e.toString()).toList();
+        }
+      } catch (_) {}
+    }
+
+    List<ChecklistItem> parsedChecklist = [];
+    if (map['checklist'] != null) {
+      try {
+        final decoded = map['checklist'] is String
+            ? jsonDecode(map['checklist'] as String)
+            : map['checklist'];
+        if (decoded is List) {
+          parsedChecklist = decoded
+              .map(
+                (c) =>
+                    ChecklistItem.fromMap(Map<String, dynamic>.from(c as Map)),
+              )
+              .toList();
         }
       } catch (_) {}
     }
@@ -135,6 +155,7 @@ class ItineraryPlace {
       hasDizzinessWarning: (map['has_dizziness_warning'] as num?) == 1,
       avgWaitMinutes: (map['avg_wait_minutes'] as num?)?.toInt() ?? 0,
       durationMinutes: (map['duration_minutes'] as num?)?.toInt() ?? 0,
+      checklist: parsedChecklist,
     );
   }
 
@@ -165,6 +186,7 @@ class ItineraryPlace {
     bool? hasDizzinessWarning,
     int? avgWaitMinutes,
     int? durationMinutes,
+    List<ChecklistItem>? checklist,
   }) {
     return ItineraryPlace(
       id: id ?? this.id,
@@ -193,6 +215,7 @@ class ItineraryPlace {
       hasDizzinessWarning: hasDizzinessWarning ?? this.hasDizzinessWarning,
       avgWaitMinutes: avgWaitMinutes ?? this.avgWaitMinutes,
       durationMinutes: durationMinutes ?? this.durationMinutes,
+      checklist: checklist ?? this.checklist,
     );
   }
 }
