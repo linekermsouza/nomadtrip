@@ -5,16 +5,24 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nomadtrip/core/services/backup_service.dart';
 
 void main() {
-  test('parses a valid .ntrip payload independently of the platform picker', () {
-    final payload = Uint8List.fromList(
-      utf8.encode(jsonEncode({'trip': {'name': 'Florida'}, 'days': []})),
-    );
+  test(
+    'parses a valid .ntrip payload independently of the platform picker',
+    () {
+      final payload = Uint8List.fromList(
+        utf8.encode(
+          jsonEncode({
+            'trip': {'name': 'Florida'},
+            'days': [],
+          }),
+        ),
+      );
 
-    final result = BackupService.parseTripBytes(payload);
+      final result = BackupService.parseTripBytes(payload);
 
-    expect(result['trip'], isA<Map<String, dynamic>>());
-    expect(result['days'], isEmpty);
-  });
+      expect(result['trip'], isA<Map<String, dynamic>>());
+      expect(result['days'], isEmpty);
+    },
+  );
 
   test('rejects an unrelated JSON file', () {
     final payload = Uint8List.fromList(utf8.encode(jsonEncode({'foo': 'bar'})));
@@ -24,3 +32,4 @@ void main() {
       throwsA(isA<FormatException>()),
     );
   });
+}

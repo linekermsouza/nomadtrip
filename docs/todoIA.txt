@@ -1,5 +1,45 @@
-- antes da viagem tem que verificar os documentos:
-[11:38, 11/2/2026] Ana Carolina: vai preencher alguns dias antes o formulário da copa
-[11:39, 11/2/2026] Ana Carolina: cnh, passaporte, os documentos dos hotéis, reservas dos parques, certidão ou rg das crianças
-[11:39, 11/2/2026] Ana Carolina: a papelada de hotel e parque é só caso alguém peça mesmo
-[11:39, 11/2/2026] Ana Carolina: e agora vai precisar daquele formulário do congo né
+ser possível adicionar checklist em um item (local) do roteiro, ser possível visualizar o checklist ao tocar no Local, por exemplo para o Walmart do dia 24/11, ter esse checklist:
+Checklist Walmart - Dia 24/11
+☐ 2 caixas de água (35 ou 40 unidades)
+☐ 1 galão de água para deixar na casa
+☐ Suco de laranja (1 ou 2 garrafas)
+☐ Leite (2 galões ou 2 embalagens grandes)
+☐ Coca-Cola / refrigerante para a casa
+☐ Gatorade ou Powerade (6 a 8 unidades)
+☐ Batata Pringles
+☐ Doritos
+☐ Goldfish para as crianças
+☐ Cookies Oreo
+☐ Barrinhas de cereal
+☐ Mix de castanhas/amendoins
+☐ Bananas
+☐ Maçãs
+☐ Pacote de frutas cortadas (se encontrar)
+☐ Pizza congelada
+☐ Mac and Cheese (é bom?)
+☐ Pão de forma
+☐ Manteiga
+☐ Cream Cheese Philadelphia
+☐ Presunto
+☐ Queijo fatiado
+☐ Ovos (18 unidades)
+☐ Bacon
+☐ Iogurte
+☐ Cereal (Cheerios, Froot Loops, etc.)
+
+
+ao pesquisar um local, ter opção de ir para o dia de um local que aparece na lista
+
+quando abrir o app ir para o dia correspondente ao dia atual, se não tiver no roteiro mover para o Day 1
+
+bug: ao clicar em editar local, no campo de categorias tá aparecendo um texto na vertical: "RIGHT OVERFLOWED BY 71 PIXELS"
+
+na tela de editar local, Mostrar Especificações de Montanha-Russa / Atração somente para categoria Parque Temático 
+
+não tá pegando as imagens corretamente do local, aeroporto, costco, Walmart, etc. Também gostaria de no topo ter uma imagem relacionada com a descrição do dia, talvez como background do topo não sei, verifique a forma mais elegante.
+
+bug: botões ficam por detrás da navigation bar em: dialog de adicionar dica ou lembrete, tela de Novo Local, tela de detalhe do Local, tela de edição do Local
+
+tela de detalhe tem pouca informação de visualização enquanto a tela de detalhes tem muita, todas as informações tem que tá em detalhes
+
+no card do local ter um botão para acessar o primeiro link direto
