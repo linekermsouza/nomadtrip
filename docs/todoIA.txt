@@ -1,40 +1,38 @@
-ser possível adicionar checklist em um item (local) do roteiro, ser possível visualizar o checklist ao tocar no Local, por exemplo para o Walmart do dia 24/11, ter esse checklist:
-Checklist Walmart - Dia 24/11
-☐ 2 caixas de água (35 ou 40 unidades)
-☐ 1 galão de água para deixar na casa
-☐ Suco de laranja (1 ou 2 garrafas)
-☐ Leite (2 galões ou 2 embalagens grandes)
-☐ Coca-Cola / refrigerante para a casa
-☐ Gatorade ou Powerade (6 a 8 unidades)
-☐ Batata Pringles
-☐ Doritos
-☐ Goldfish para as crianças
-☐ Cookies Oreo
-☐ Barrinhas de cereal
-☐ Mix de castanhas/amendoins
-☐ Bananas
-☐ Maçãs
-☐ Pacote de frutas cortadas (se encontrar)
-☐ Pizza congelada
-☐ Mac and Cheese (é bom?)
-☐ Pão de forma
-☐ Manteiga
-☐ Cream Cheese Philadelphia
-☐ Presunto
-☐ Queijo fatiado
-☐ Ovos (18 unidades)
-☐ Bacon
-☐ Iogurte
-☐ Cereal (Cheerios, Froot Loops, etc.)
+- não é pra fazer nada automaticamente do que tá anotado aqui, esse arquivo é somente para gravar as solicitações futuras que eu vou fazer pra IA. Execute o que foi pedido na solicitação pelo terminal.
+
+alterar no roteiro (alteração no .ntrip):
+- mínimo de mudanças possível pra não impactar o roteiro já praticamente consolidado, qualquer sugestão pode me perguntar
+
+Ale & Compass Restaurant
+Disney's Yacht Club Resort
+13h30 4/11, não vamos mais no Beaches & Cream
+
+adicionar visitar Mount Dora como alternativa para Carol, pois alguns estarão no parque.
+dia 30/11 ou 03/12 ou 07/12 ou 08/12
+
+adicionar ir na sala vip 7h da manhã do dia 24/11/2026, quero ir na sala vip da Copa no aeroporto do panamá, coloque a localização e uma boa descrição pra eu achar assim que descer do avião
+
+adicionar ir no level 99 como alternativa para Carol no dia de ir no Disney springs que não seja o dia que vamos para os resorts
+
+adicionar visita em Computers Direct , 3318 W Hillsboro Blvd
+Deerfield Beach, FL 33442
+Florida, EUA 
+quando eu estiver passando por Miami na volta de orlando
+
+adicionar no roteiro dia 24/11 quando estivermos saindo de Miami e indo pra orlando, na verdade estaremos indo para a nossa hospedagem em Kissimmee, localização 2301 Butterfly Palm Way, Kissimmee, FL 34747, USA, 
+
+adicionar santa's toy shop pop-up no roteiro do dia em st. Augustine, 📍54 St. George St, St. Augustine, Florida
+
+adicionar santa's secret cocoa spot no roteiro do dia em st. Augustine, 
+6 St. George Street, St. Augustine, Florida
+
+adicionar no dia 06/12, passeio pelo merry market de lake eola
 
 
-ao pesquisar um local, ter opção de ir para o dia de um local que aparece na lista
 
-quando abrir o app ir para o dia correspondente ao dia atual, se não tiver no roteiro mover para o Day 1
+quando limpar os dados ou instalar pela primeira vez sempre criar o roteiro da viagem baseado no .ntrip atualizado que vai junto com a apk/ipa
 
-bug: ao clicar em editar local, no campo de categorias tá aparecendo um texto na vertical: "RIGHT OVERFLOWED BY 71 PIXELS"
-
-na tela de editar local, Mostrar Especificações de Montanha-Russa / Atração somente para categoria Parque Temático 
+ao pesquisar um local, ter opção de ir para o dia (em itinerário tab) de um local que aparece na lista
 
 não tá pegando as imagens corretamente do local, aeroporto, costco, Walmart, etc. Também gostaria de no topo ter uma imagem relacionada com a descrição do dia, talvez como background do topo não sei, verifique a forma mais elegante.
 
@@ -43,3 +41,11 @@ bug: botões ficam por detrás da navigation bar em: dialog de adicionar dica ou
 tela de detalhe tem pouca informação de visualização enquanto a tela de detalhes tem muita, todas as informações tem que tá em detalhes
 
 no card do local ter um botão para acessar o primeiro link direto
+
+quando abrir o app ir para o dia correspondente ao dia atual, se não tiver no roteiro mover para o Day 1
+
+bug: ao clicar em editar local, no campo de categorias tá aparecendo um texto na vertical: "RIGHT OVERFLOWED BY 71 PIXELS"
+
+na tela de editar local, Mostrar Especificações de Montanha-Russa / Atração somente para categoria Parque Temático 
+
+mostrar a localização em um mapa embedded nos detalhes do local, se clicar abrir o mapa mostrando a localização mas nesse caso sem traçar a rota

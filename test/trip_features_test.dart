@@ -280,6 +280,87 @@ void main() {
         ),
         isTrue,
       );
+
+      // Rule: Day 1 has Copa Club VIP Lounge (Panama) and Kissimmee Lodging
+      final day1Places = places.where((p) => p['day_number'] == 1).toList();
+      expect(
+        day1Places.any(
+          (p) => (p['name'] as String).contains('Sala VIP Copa Club'),
+        ),
+        isTrue,
+      );
+      final checkinDay1 = day1Places.firstWhere(
+        (p) => (p['name'] as String).contains('Check-in'),
+      );
+      expect(checkinDay1['city'], 'Kissimmee');
+      expect(checkinDay1['raw_description'], contains('Windsor Palms'));
+      expect(
+        checkinDay1['raw_description'],
+        contains('2301 Butterfly Palm Way'),
+      );
+
+      // Rule: Day 6 has Level99 alternative for Carol at Disney Springs
+      final day6Places = places.where((p) => p['day_number'] == 6).toList();
+      final level99 = day6Places.firstWhere(
+        (p) => (p['name'] as String).contains('Level99'),
+      );
+      expect(level99['is_alternative'], 1);
+      expect(level99['category'], 'attraction');
+
+      // Rule: Day 11 replaced Beaches & Cream with Ale & Compass at Yacht Club Resort @ 13h30
+      final day11Places = places.where((p) => p['day_number'] == 11).toList();
+      expect(
+        day11Places.any(
+          (p) => (p['name'] as String).contains('Beaches & Cream'),
+        ),
+        isFalse,
+      );
+      final aleCompass = day11Places.firstWhere(
+        (p) => (p['name'] as String).contains('Ale & Compass'),
+      );
+      expect(aleCompass['time'], contains('13h30'));
+      expect(aleCompass['requires_reservation'], 1);
+
+      // Rule: Day 12 has Santa's Secret Cocoa Spot and Santa's Toy Shop Pop-up
+      final day12Places = places.where((p) => p['day_number'] == 12).toList();
+      expect(
+        day12Places.any(
+          (p) => (p['name'] as String).contains("Santa's Secret Cocoa Spot"),
+        ),
+        isTrue,
+      );
+      expect(
+        day12Places.any(
+          (p) => (p['name'] as String).contains("Santa's Toy Shop Pop-up"),
+        ),
+        isTrue,
+      );
+
+      // Rule: Day 13 has Merry Market at Lake Eola
+      final day13Places = places.where((p) => p['day_number'] == 13).toList();
+      expect(
+        day13Places.any((p) => (p['name'] as String).contains('Merry Market')),
+        isTrue,
+      );
+
+      // Rule: Day 15 has Mount Dora alternative for Carol
+      final day15Places = places.where((p) => p['day_number'] == 15).toList();
+      final mountDora = day15Places.firstWhere(
+        (p) => (p['name'] as String).contains('Mount Dora'),
+      );
+      expect(mountDora['is_alternative'], 1);
+      expect(mountDora['city'], 'Mount Dora');
+
+      // Rule: Day 18 has Computers Direct in Deerfield Beach
+      final day18Places = places.where((p) => p['day_number'] == 18).toList();
+      final computersDirect = day18Places.firstWhere(
+        (p) => (p['name'] as String).contains('Computers Direct'),
+      );
+      expect(computersDirect['city'], 'Deerfield Beach');
+      expect(
+        computersDirect['raw_description'],
+        contains('3318 W Hillsboro Blvd'),
+      );
     });
   });
 }

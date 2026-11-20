@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
@@ -56,7 +55,9 @@ class BackupService {
 
   static Future<Map<String, dynamic>?> loadBundledFloridaTrip() async {
     try {
-      final jsonStr = await rootBundle.loadString('assets/data/florida2026.ntrip');
+      final jsonStr = await rootBundle.loadString(
+        'assets/data/florida2026.ntrip',
+      );
       final data = jsonDecode(jsonStr);
       if (data is Map<String, dynamic>) {
         return data;
@@ -70,15 +71,13 @@ class BackupService {
     // */* for unknown custom extensions on Android, while still filtering by
     // extension on platforms that support it. This keeps .ntrip selectable in
     // both Downloads and Google Drive instead of showing it as unsupported.
-    final result = await FilePicker.pickFiles(
+    final file = await FilePicker.pickFile(
       type: FileType.any,
       allowedExtensions: ['ntrip', 'json'],
-      withData: true,
     );
 
-    if (result == null || result.isEmpty) return null;
+    if (file == null) return null;
 
-    final file = result.first;
     // Google Drive/Files providers can return a file without the bytes in the
     // picker response. The XFile points to the temporary local copy created by
     // Android's Storage Access Framework, so use it as a fallback.
@@ -105,7 +104,8 @@ class BackupService {
       );
     }
 
-    final hasTripData = data.containsKey('trip') ||
+    final hasTripData =
+        data.containsKey('trip') ||
         data.containsKey('tripName') ||
         data.containsKey('days');
 
